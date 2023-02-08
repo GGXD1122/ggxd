@@ -24,12 +24,42 @@
     <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
     <div class="post-title">
         <p>
-            2023-2-8
+            ExpressLRS基础问题汇总
         </p>
         <hr>
     </div>
     <div class="post-content">
-        
+        <h2 id="！新手刷起来方便吗？"><a href="#！新手刷起来方便吗？" class="headerlink" title="！新手刷起来方便吗？"></a>！新手刷起来方便吗？</h2><p>不建议新手刷写ExpressLRS（简称ELRS）。玩ELRS需要相当的基础技术与时间精力投入。如果想省时间，请直接购买成品ELRS发射接收套装。（厂家会很快跟进）</p>
+<hr>
+<h2 id="1-ELRS有什么意义？"><a href="#1-ELRS有什么意义？" class="headerlink" title="1.ELRS有什么意义？"></a>1.ELRS有什么意义？</h2><p>超低延迟和更大的射频功率。915的ELRS能达到比黑羊150Hz更快的200Hz，延迟低于黑羊。2.4g的ELRS能到地表最强的500Hz且发射功率超过tracer.R9M改ELRS加风扇和散热片后，能达到惊人的2w射频功率。</p>
+<hr>
+<h2 id="2-回传与距离有什么牺牲吗？"><a href="#2-回传与距离有什么牺牲吗？" class="headerlink" title="2.回传与距离有什么牺牲吗？"></a>2.回传与距离有什么牺牲吗？</h2><p>回传对比黑羊，牺牲了用于地面站数传设置的MAVLINK（不过穿越机玩家不需要mavlink）。<br>同时保留了常用的黑羊的基础回传，包括：TQLY,RQLY连接质量,RSS,RFMD，RXBT电池电压等……gps的回传在更新后也会支持。<br>距离由于黑羊在稍微飞远一点（几百米）就会自动降到50Hz远航模式，所以用起来更人性化。相比之下，ELRS需要手动选择刷新率，远航建议手动选择50hz或者更低的25h。因为强如黑羊，开恒定高刷新率模式，距离同样不可能很远，这是由射频的基础原理决定的。</p>
+<hr>
+<h2 id="3-R9M和睿斯凯接收机能回到原厂R9协议吗？"><a href="#3-R9M和睿斯凯接收机能回到原厂R9协议吗？" class="headerlink" title="3.R9M和睿斯凯接收机能回到原厂R9协议吗？"></a>3.R9M和睿斯凯接收机能回到原厂R9协议吗？</h2><p>能。R9M和R9Mlite都可以通过新方法叠加bl实现来回刷写，互不影响。接收机只要是通过最新方法进行刷写，都能刷回到原厂协议。<br>注：R9Mlite pro目前用于来回刷写的固件还没做出来，暂时只能用STlink单向刷写。</p>
+<hr>
+<h2 id="4-支持的硬件-硬件与黑羊无关"><a href="#4-支持的硬件-硬件与黑羊无关" class="headerlink" title="4.支持的硬件(硬件与黑羊无关)"></a>4.支持的硬件(硬件与黑羊无关)</h2><p>发射：R9M，多协议五合一（开发中），自制开源发射系列（sx1276与sx1280），<br>接收：大部分睿思凯r9系列接收机，ghost atto接收机, 自制开源接收机（2.4或915）等，<br>目前在开发的：R900MINI，思翼发射接收系列，多协议五合一。</p>
+<hr>
+<h2 id="5-黑羊mod小板需要加吗？"><a href="#5-黑羊mod小板需要加吗？" class="headerlink" title="5.黑羊mod小板需要加吗？"></a>5.黑羊mod小板需要加吗？</h2><p>需要.X7 X10 X12都要加。</p>
+<hr>
+<h2 id="6-R9M老款和2019都能用吗"><a href="#6-R9M老款和2019都能用吗" class="headerlink" title="6.R9M老款和2019都能用吗"></a>6.R9M老款和2019都能用吗</h2><p>都能用。老款加一个电阻即可达到和2019款相同的elrs效果。</p>
+<hr>
+<h2 id="7-稳定性如何？"><a href="#7-稳定性如何？" class="headerlink" title="7.稳定性如何？"></a>7.稳定性如何？</h2><p>远航选50Hz更远距离；竞速选200Hz超低延迟。已经过国外玩家一年左右的检验。相关视频测试老外也做了很多，自行查找即可。</p>
+<hr>
+<h2 id="8-改完用什么通讯"><a href="#8-改完用什么通讯" class="headerlink" title="8.改完用什么通讯"></a>8.改完用什么通讯</h2><p>接收机与飞控：crsf<br>高频头与遥控器：crsf v2或crsfshot(需要opentx2.4)</p>
+<hr>
+<h2 id="9-刷新率和功率怎么改"><a href="#9-刷新率和功率怎么改" class="headerlink" title="9.刷新率和功率怎么改"></a>9.刷新率和功率怎么改</h2><p>有专门的ExpressLRS遥控器脚本进行设置。</p>
+<hr>
+<h2 id="10-接收机能不能用SBUS？"><a href="#10-接收机能不能用SBUS？" class="headerlink" title="10.接收机能不能用SBUS？"></a>10.接收机能不能用SBUS？</h2><p>不可以，只能使用crsf.pix飞控的crsf支持已经提上日程。</p>
+<hr>
+<h2 id="11-教程在哪里找"><a href="#11-教程在哪里找" class="headerlink" title="11.教程在哪里找"></a>11.教程在哪里找</h2><p>群主做了详细视频教程，B站搜索ExpressLRS即可。</p>
+<hr>
+<h2 id="12-ExpressLRS的2-4g与915系列有什么区别："><a href="#12-ExpressLRS的2-4g与915系列有什么区别：" class="headerlink" title="12.ExpressLRS的2.4g与915系列有什么区别："></a>12.ExpressLRS的2.4g与915系列有什么区别：</h2><p>2.4的ELRS高频头是使用全新一代2.4g芯片:sx1280开源制作，能达到超低的500Hz高刷新率，低延迟性能基本地表最强。sx1280即黑羊tracer，肥鲨ghost，思翼FM30，富斯302同款射频芯片。目前支持肥鲨ghost接收，自制接收等。</p>
+<p>915的ELRS高频头可以自制，也可以用R9M进行改装。最高刷新率200Hz，高于黑羊的150hz。接收机能买到的成品硬件较多。</p>
+<hr>
+<h2 id="13-补充："><a href="#13-补充：" class="headerlink" title="13.补充："></a>13.补充：</h2><p>（1）R9MM接收机去年有几批货晶振有问题，建议买今年生产的r9mm或者使用R9mx、R9slim+ 接收机。有条件的可以自制接收机。<br>（2）强烈建议在R9mm接收机和机架之间做好减震，因为BGA封装结构不耐炸。<br>（3）原厂棒子天线性能较差，建议用速8或者枫叶天线。</p>
+<hr>
+<p>文章转自哔哩哔哩UP主<a target="_blank" rel="noopener" href="https://space.bilibili.com/162296039">“-蓝色枫叶-“</a><br>侵权删</p>
+
     </div>
 
     
