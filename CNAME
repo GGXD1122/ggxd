@@ -1,1 +1,2 @@
-gegexd.com
+touch CNAME
+echo 'gegexd.com' > CNAME
