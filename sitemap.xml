@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gegexd.com/2023/0507/</loc>
+    
+    <lastmod>2023-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gegexd.com/2023/0212/</loc>
     
     <lastmod>2023-05-07</lastmod>
@@ -170,6 +179,13 @@
   
   <url>
     <loc>https://gegexd.com/categories/Betaflight/</loc>
+    <lastmod>2023-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/categories/%E5%94%AE%E5%90%8E/</loc>
     <lastmod>2023-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
