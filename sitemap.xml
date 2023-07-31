@@ -83,14 +83,21 @@
 
   
   <url>
-    <loc>https://gegexd.com/tags/ELRS/</loc>
+    <loc>https://gegexd.com/tags/Betaflight/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gegexd.com/tags/%E9%AB%98%E9%A2%91%E5%A4%B4/</loc>
+    <loc>https://gegexd.com/tags/BF/</loc>
+    <lastmod>2023-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/%E8%B0%83%E5%8F%82/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -118,21 +125,14 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/tags/Betaflight/</loc>
+    <loc>https://gegexd.com/tags/ELRS/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gegexd.com/tags/BF/</loc>
-    <lastmod>2023-07-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/%E8%B0%83%E5%8F%82/</loc>
+    <loc>https://gegexd.com/tags/%E9%AB%98%E9%A2%91%E5%A4%B4/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -148,7 +148,7 @@
 
   
   <url>
-    <loc>https://gegexd.com/categories/ELRS/</loc>
+    <loc>https://gegexd.com/categories/Betaflight/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -162,7 +162,7 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/Betaflight/</loc>
+    <loc>https://gegexd.com/categories/ELRS/</loc>
     <lastmod>2023-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
