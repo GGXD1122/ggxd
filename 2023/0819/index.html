@@ -19,18 +19,36 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta property="og:type" content="website">
-<meta property="og:title" content="鸽鸽XD">
-<meta property="og:url" content="https://gegexd.com/archives/index.html">
+    <meta name="description" content="如何使用Blackbox调整FPV无人机的滤波器和PID  目录 入门 调整目标 基本配置 如何使用 PIDToolBox 和 Blackbox 滤波器调整 进行噪声分析的飞行 了解陀螺仪频率和延迟 滤波策略 您的机架有多干净？ 调整 RPM 滤波器 调整动态陷波滤波器 调整陀螺仪低通滤波器 调整 D 项低通滤波器 静态陷波滤波器 偏航低通滤波器 PID 调整 速率曲线和角度模式 找到 P&amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用 Blackbox 调整滤波和PID">
+<meta property="og:url" content="https://gegexd.com/2023/0819/index.html">
 <meta property="og:site_name" content="鸽鸽XD">
+<meta property="og:description" content="如何使用Blackbox调整FPV无人机的滤波器和PID  目录 入门 调整目标 基本配置 如何使用 PIDToolBox 和 Blackbox 滤波器调整 进行噪声分析的飞行 了解陀螺仪频率和延迟 滤波策略 您的机架有多干净？ 调整 RPM 滤波器 调整动态陷波滤波器 调整陀螺仪低通滤波器 调整 D 项低通滤波器 静态陷波滤波器 偏航低通滤波器 PID 调整 速率曲线和角度模式 找到 P&amp;#x2">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819045342.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x682.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x6827e9deaa9695bd003.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819051633-1.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x68292b7b9c095ce7d1c.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/blheli_32-best-settings-2022-pwm-frequency-rampup-power-motor-timing-blhelisuite32-1024x949.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/bluejay-esc-configurator-24khz-1024x865.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819053508-1.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819055126.png">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819055738-1.md.jpg">
+<meta property="og:image" content="https://www.z4a.net/images/2023/08/19/_20230819060432-1.jpg">
+<meta property="article:published_time" content="2023-08-18T20:27:09.000Z">
+<meta property="article:modified_time" content="2023-08-18T22:16:17.698Z">
 <meta property="article:author" content="鸽鸽XD">
+<meta property="article:tag" content="Blackbox">
+<meta property="article:tag" content="PID">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.z4a.net/images/2023/08/19/_20230819045342.md.jpg">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="/assets/favicon.ico">
     
-    <title>鸽鸽XD的小站</title>
+    <title>如何使用 Blackbox 调整滤波和PID · 鸽鸽XD的小站</title>
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -227,6 +245,8 @@
         }
     </script>
     
+        <body class="post-body">
+    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -256,6 +276,17 @@
     </div>
     <!-- toggle banner for post layout -->
     
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">鸽鸽XD的小站</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">如何使用 Blackbox 调整滤波和PID</a>
+            </div>
+        </div>
+    
 </header>
 
         <!-- fixed footer -->
@@ -282,24 +313,70 @@
 
 
 
+    height:50vh;
+
 ">
     
     <!-- 主页  -->
     
+        
+    <!-- 404页  -->
+    
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//s1.ax1x.com/2023/02/13/pSIa2QO.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+                如何使用 Blackbox 调整滤波和PID
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+                
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blackbox">Blackbox</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="PID">PID</a>
+    
+</div>
+
+                
+                <!-- 文章字数统计 -->
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.9k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2023/08/19</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -429,230 +506,175 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main index-page">
+                <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="如何使用Blackbox调整FPV无人机的滤波器和PID"><a href="#如何使用Blackbox调整FPV无人机的滤波器和PID" class="headerlink" title="如何使用Blackbox调整FPV无人机的滤波器和PID "></a>如何使用Blackbox调整FPV无人机的滤波器和PID </h1><p><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClItk"><img src="https://www.z4a.net/images/2023/08/19/_20230819045342.md.jpg"></a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
+<li><a href="#%E5%85%A5%E9%97%A8">入门</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4%E7%9B%AE%E6%A0%87">调整目标</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">基本配置</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8pidtoolbox%E5%92%8Cblackbox">如何使用 PIDToolBox 和 Blackbox</a></li>
+<li><a href="#%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%B0%83%E6%95%B4">滤波器调整</a></li>
+<li><a href="#%E8%BF%9B%E8%A1%8C%E5%99%AA%E5%A3%B0%E5%88%86%E6%9E%90%E7%9A%84%E9%A3%9E%E8%A1%8C">进行噪声分析的飞行</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E9%99%80%E8%9E%BA%E4%BB%AA%E9%A2%91%E7%8E%87%E5%92%8C%E5%BB%B6%E8%BF%9F">了解陀螺仪频率和延迟</a></li>
+<li><a href="#%E6%BB%A4%E6%B3%A2%E7%AD%96%E7%95%A5">滤波策略</a></li>
+<li><a href="#%E6%82%A8%E7%9A%84%E6%9C%BA%E6%9E%B6%E6%9C%89%E5%A4%9A%E5%B9%B2%E5%87%80">您的机架有多干净？</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4rpm%E6%BB%A4%E6%B3%A2%E5%99%A8">调整 RPM 滤波器</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4%E5%8A%A8%E6%80%81%E9%99%B7%E6%B3%A2%E6%BB%A4%E6%B3%A2%E5%99%A8">调整动态陷波滤波器</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4%E9%99%80%E8%9E%BA%E4%BB%AA%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8">调整陀螺仪低通滤波器</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4D%E9%A1%B9%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8">调整 D 项低通滤波器</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E9%99%B7%E6%B3%A2%E6%BB%A4%E6%B3%A2%E5%99%A8">静态陷波滤波器</a></li>
+<li><a href="#%E5%81%8F%E8%88%AA%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2%E5%99%A8">偏航低通滤波器</a></li>
+<li><a href="#PID%E8%B0%83%E6%95%B4">PID 调整</a></li>
+<li><a href="#%E9%80%9F%E7%8E%87%E6%9B%B2%E7%BA%BF%E5%92%8C%E8%A7%92%E5%BA%A6%E6%A8%A1%E5%BC%8F">速率曲线和角度模式</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0PD%E5%B9%B3%E8%A1%A1">找到 P&#x2F;D 平衡</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4i%E5%A2%9E%E7%9B%8A">调整 I 增益</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE">其他设置</a></li>
+<li><a href="#%E6%B2%B9%E9%97%A8%E5%A2%9E%E5%BC%BA">油门增强</a></li>
+<li><a href="#%E7%94%B5%E5%8E%8B%E4%B8%8B%E9%99%8D%E8%A1%A5%E5%81%BF">电压下降补偿</a></li>
+<li><a href="#%E8%B0%83%E6%95%B4%E5%81%8F%E8%88%AA">调整偏航</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E7%BB%9D%E5%AF%B9%E5%AE%8C%E7%BE%8E%E7%9A%84%E5%8F%82%E6%95%B0">没有绝对完美的参数</a></li>
+<li><a href="#%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%8A%80%E5%B7%A7">故障排除技巧</a></li>
+<li><a href="#%E9%99%80%E8%9E%BA%E4%BB%AA%E9%97%AE%E9%A2%98">陀螺仪问题</a></li>
+<li><a href="#RC%E5%B9%B3%E6%BB%91">RC 平滑</a></li>
+<li><a href="#PID%E5%92%8C%E6%B1%82%E5%92%8C">PID 和求和</a></li>
+<li><a href="#ADC%E6%BB%A4%E6%B3%A2%E5%BC%95%E8%B5%B7%E7%9A%84%E6%8C%AF%E8%8D%A1">ADC 滤波引起的振荡</a></li>
+</ul>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><ul>
+<li>本章将介绍如何开始使用 Blackbox 来优化我们的 FPV 无人机。在优化过程中，我们有两个主要目标：</li>
+</ul>
+<h2 id="调整目标"><a href="#调整目标" class="headerlink" title="调整目标"></a>调整目标</h2><ul>
+<li>更有效地使用滤波器：尽可能少地使用滤波器以最小化延迟，但足够减少噪音到可接受的水平。</li>
+<li>优化 PID 增益和相关设置，使无人机飞行更加精确和响应。</li>
+</ul>
+<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><ol>
+<li>硬件清单</li>
+</ol>
+<ul>
+<li>选择带有橡胶减震垫（也称为减震柱）的飞塔，可以提高耐久性和噪音性能（减震）。</li>
+<li>使用金属螺丝来固定飞塔，避免使用尼龙&#x2F;塑料螺丝、支撑柱或间隔柱，因为它们容易破裂并且更容易产生振动。如果需要间隔柱，请使用软硅胶材质的。使用更轻的钛螺丝可以节省几克重。</li>
+<li>在安装4合1电调之前，用金属螺母牢固锁定飞控堆叠的螺丝。如果您的机架有压入式螺母，则无需再添加另一个螺母。这将防止堆叠螺丝摇摆并产生振动。首先手动拧紧它们，然后用扳手&#x2F;螺丝刀最后一次拧紧。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClMSb"><img src="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x682.md.jpg"></a></li>
+</ul>
+<p>为了固定整个飞控堆叠，您可以使用4个塑料螺母。手动拧紧螺母，使橡胶减震垫不被过度压碎，这样可以确保软件装载有效工作。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClPp9"><img src="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x6827e9deaa9695bd003.md.jpg"></a></p>
+<ol start="2">
+<li>黑匣子记录设置</li>
+</ol>
+<p>在黑匣子中选择以下设置：</p>
+<ul>
+<li>内置闪存或SD卡</li>
+<li>由于我们要调谐滤波器，我们希望以2KHz（或1.6KH对于BMI270陀螺仪）的频率记录日志。</li>
+<li>在调试模式下选择“GYRO_SCALED”以记录未经滤波的陀螺仪信号。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClhmH"><img src="https://www.z4a.net/images/2023/08/19/_20230819051633-1.md.jpg"></a></li>
+</ul>
+<ol start="3">
+<li><p>在您的 OpenTX&#x2F;EdgeTX 无线电中禁用 ADC 过滤器（System-&gt;Hardware）。这将减少延迟。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VCls15"><img src="https://www.z4a.net/images/2023/08/19/how-to-build-fpv-drone-2023-stack-screws-1024x68292b7b9c095ce7d1c.md.jpg"></a></p>
+</li>
+<li><p>电调设置：</p>
+</li>
+</ol>
+<p>以下设置只针对五寸飞机 仅供参考</p>
+<p>对于 BLHeli_32 电调：</p>
+<ul>
+<li>Rampup Power 40%</li>
+<li>Motor timing 16</li>
+<li>PWM 频率：<ul>
+<li>低 “16KHz”（或最低频率）</li>
+<li>高 “By RPM”</li>
+<li>或者，您可以将 LOW 和 HIGH 都设置为固定的 24KHz 或 48KHz。24KHz 对于处理推力洗效果更好，48KHz 对于平滑性更好，但 “By RPM” 提供了两者的最佳效果。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VCl0bh"><img src="https://www.z4a.net/images/2023/08/19/blheli_32-best-settings-2022-pwm-frequency-rampup-power-motor-timing-blhelisuite32-1024x949.md.jpg"></a></li>
+</ul>
+</li>
+</ul>
+<p>对于 BLHeli_S 电调，尝试刷写 Bluejay 固件（48KHz），这对于微型无人机的平滑性和效率更好。有些人喜欢24KHz，因为它有更多扭矩并且对于推力洗处理更好，但是如果您启用推力线性化，使用48KHz时它应该能够弥补一部分失去的扭矩，因此您将获得两者的最佳效果。</p>
+<p>Bluejay 固件还支持双向 DShot，这对于 Betaflight 中的各种功能（如 RPM 滤波器和动态空闲）是必需的。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VCl9W2"><img src="https://www.z4a.net/images/2023/08/19/bluejay-esc-configurator-24khz-1024x865.md.jpg"></a></p>
+<hr>
+<ol start="5">
+<li>将最新版本的 Betaflight 固件（目前为 4.4.2）刷写到您的飞控器上，并将 PID&#x2F;滤波器设置保持默认。在 Betaflight中启用专家模式，这将在 PID 调整页面上为您提供所有可用的滑块和选项。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClBsG"><img src="https://www.z4a.net/images/2023/08/19/_20230819053508-1.md.jpg"></a></li>
+</ol>
+<p>在 配置 页面中，设置您的 PID 循环频率；在 电机 标签中，设置您的电调协议。</p>
+<p>无论飞控处理器如何，如果它具有 BMI270 陀螺仪，您只能使用 3.2KHz PID 循环频率和 DShot300 电调协议。</p>
+<p>对于其他陀螺仪，对于 F4 飞控器，您可以使用 4KHz 和 DShot300。对于 F7 或 H7 飞控器，您可以使用 8KHz 和 DShot600，或者如果您希望，可以使用 4K 和 DShot300。在 配置 页面中禁用您可能不需要的任何功能，如气压计、LED灯带、软串口等。</p>
+<hr>
+<ol start="6">
+<li>在 电机 页面中，启用双向 DShot。</li>
+</ol>
+<p>几乎所有现代电调都支持双向 DShot。我有一个关于如何启用 RPM 滤波器的教程。对于 BLHeli_32 电调，它可以直接使用，但如果您有 BLHeli_S 电调，则需要首先刷写 Bluejay 固件。</p>
+<p>为了检查双向 DShot 是否正常工作，请在 电机 页面中运行电机（拆掉螺旋桨！），并查看错误率（E）是否保持在 0%。如果情况不是这样，请尝试使用较慢的 DShot 协议，例如 DShot300，甚至 DShot150 重试。如果这些协议都无法给出 0% 的错误率，那么您可能需要禁用双向 DShot。</p>
+<p>一旦您启用了双向 DShot，您可以启用 RPM 滤波器，这可能是 Betaflight 中最好的滤波器。<br><img src="https://www.z4a.net/images/2023/08/19/_20230819055126.png"></p>
+<ol start="7">
+<li>加载适当的 RC_Link 预设。<br><a target="_blank" rel="noopener" href="https://www.z4a.net/image/VClifE"><img src="https://www.z4a.net/images/2023/08/19/_20230819055738-1.md.jpg"></a></li>
+</ol>
+<p>由于不同的遥控链路具有不同的数据包速率和数据包间隔，需要特定的遥控平滑和前馈配置，以避免 Feedforward（前馈）问题。</p>
+<p>通过加载适当的 RC_Link 预设，Betaflight 将自动为您应用所有必要的配置。在加载预设之前还有一些其他选项可供选择，特别是飞行风格，对于大多数人来说，可能是 Freestyle（自由飞行）。</p>
+<p>如果您正在使用 Crossfire，最好将数据包速率锁定为 50Hz（更远的距离）或 150Hz（更低的延迟）。您可以在 TBS Agent Lite LUA 脚本中进行设置。</p>
+<hr>
+<ol start="8">
+<li>降低 TPA 值</li>
+</ol>
+<p>在 PID 调整标签页右栏底部，将 TPA（油门补偿）的断点设置为 1750，即当油门位置达到该数值时，TPA 开始起效。我们不希望 TPA 在调整过程中掩盖所有的振荡问题。如果在高油门范围出现振荡问题，我们稍后可以对 TPA 进行调整。<br><img src="https://www.z4a.net/images/2023/08/19/_20230819060432-1.jpg"></p>
+<h1 id="如何使用PIDToolBox和Blackbox"><a href="#如何使用PIDToolBox和Blackbox" class="headerlink" title="如何使用PIDToolBox和Blackbox"></a>如何使用PIDToolBox和Blackbox</h1><p>我将在 PID 和滤波器调整中使用PIDToolBox (PTB)和Blackbox Explorer (BE) 。</p>
+<ul>
+<li>在这里讨论如何使用 BE：“<a target="_blank" rel="noopener" href="https://oscarliang.com/blackbox/">如何在 Betaflight 中使用 Blackbox 的基础知识</a>”</li>
+<li>在这里下载并安装 PTB：<a target="_blank" rel="noopener" href="https://github.com/bw1129/PIDtoolbox/releases/latest/">https://github.com/bw1129/PIDtoolbox/releases/latest/</a></li>
+<li>本页介绍如何使用 PTB：<a target="_blank" rel="noopener" href="https://github.com/bw1129/PIDtoolbox/wiki/PIDtoolbox-user-guide">https://github.com/bw1129/PIDtoolbox/wiki/PIDtoolbox-user-guide</a></li>
+</ul>
+<p>PIDToolBox 将是我们的主要工具，它是迄今为止最强大的 Blackbox 工具。它允许您在同一窗口上并排比较多个日志，以便您可以看到在实例中所做的更改的效果。阶跃响应工具对于调整 PID 非常简单且有用。另一个很棒的事情是频谱分析仪中 Y 轴上的单位（以分贝为单位），它可以进行更准确和客观的比较。PTB 还会告诉您估计的滤波器延迟，这很有用。</p>
+<p>我认为 PTB 的主要缺点是速度。它的加载速度相当慢，而且使用起来不如 BE 直观。这就是为什么当我只需要查看一个日志或进行一般故障排除时我主要使用 BE，因为它使用起来更快。但对于噪声和滤波器调谐，PTB 绝对是最佳选择。</p>
+<hr>
+<h1 id="建设中。。。-别急。"><a href="#建设中。。。-别急。" class="headerlink" title="建设中。。。  别急。"></a>建设中。。。  别急。</h1>
+    </article>
+    <!-- license -->
     
-        
-        
-        
-        
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://gegexd.com">鸽鸽XD</a>
+                <p>永久链接：<a href="https://gegexd.com/2023/0819/">https://gegexd.com/2023/0819/</a>
+            <p>发表日期：<a href="https://gegexd.com/2023/0819/">2023年08月19日, 4:27 am</a>
+            <p>更新日期：<a href="https://gegexd.com/2023/0819/">2023年08月19日, 6:16 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/0819/">
-                
-                <span class="abstract-title-text">如何使用 Blackbox 调整滤波和PID</span>
-            </a>
-            <div class="abstract-content">
-                如何使用Blackbox调整FPV无人机的滤波器和PID 
-目录
-入门
-调整目标
-基本配置
-如何使用 PIDToolBox 和 Blackbox
-滤波器调整
-进行噪声分析的飞行
-了解陀螺仪频率和延迟
-滤波策略
-您的机架有多干净？
-调整 RPM 滤波器
-调整动态陷波滤波器
-调整陀螺仪低通滤波器
-调整 D 项低通滤波器
-静态陷波滤波器
-...
-            </div>
-            <!-- read more -->
+        </li>
+        <li class="previous">
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Blackbox">Blackbox</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="PID">PID</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+                <div class="prevSlogan">下一篇</div>
+                <a href="/2023/0212/" title="FPV穿越机玩家常用软件">
+                    <div class="prevTitle">FPV穿越机玩家常用软件</div>
+                </a>
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/0212/">
-                
-                <span class="abstract-title-text">FPV穿越机玩家常用软件</span>
-            </a>
-            <div class="abstract-content">
-                欢迎来到我的软件分享！在这里，我会为您提供一系列与FPV穿越机相关的常用软件，我的目标是为FPV穿越机玩家提供最实用、最方便的软件资源，让您的飞行之旅更加流畅和有趣。我会不断更新和提供软件资源，为您提供更多高品质的软件支持和指导。感谢您的关注和支持！
-Betaflight (BF地面站)下载地址(正式版10.9.0)：win64：点...
-            </div>
-            <!-- read more -->
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/08/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="FPV">FPV</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="软件">软件</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/0211/">
-                
-                <span class="abstract-title-text">Betaflight基础设置流程</span>
-            </a>
-            <div class="abstract-content">
-                连接飞控板和计算机：使用USB数据线将飞控板连接到计算机上，打开Betaflight软件。
 
-确认飞控板的型号和固件版本：在Betaflight软件的主界面上，选择“端口”选项卡，选择对应的端口，然后在设置选项卡中确认所使用的飞控板型号和固件版本。
-
-校准陀螺仪：在Betaflight软件的设置选项卡中，选择“校准”子选项卡，按照指...
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/12">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Betaflight">Betaflight</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="BF">BF</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="调参">调参</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/0210/">
-                
-                <span class="abstract-title-text">Skyzone 04L v3.3接收机</span>
-            </a>
-            <div class="abstract-content">
-                Skyzone的Steadyview接收机一直有个通病 就是闪屏和画面滚动 经过了好几次更新都未解决
-
-
-后续官方推出了v3.3版的接收机上板 彻底解决了上述问题 画面接收稳定了很多 画面漂移 闪屏基本消失了
-
-
-下面视频可以看测试结果。 
-
-
-
-            </div>
-            <!-- read more -->
             
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/11">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/10</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Skyzone">Skyzone</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="FPV">FPV</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="眼镜">眼镜</a>
-    
-</div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
             
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/0208/">
-                
-                <span class="abstract-title-text">ExpressLRS基础问题汇总</span>
-            </a>
-            <div class="abstract-content">
-                新手刷起来方便吗？不建议新手刷写ExpressLRS（简称ELRS）。玩ELRS需要相当的基础技术与时间精力投入。如果想省时间，请直接购买成品ELRS发射接收套装。（厂家会很快跟进）
 
-ELRS有什么意义？超低延迟和更大的射频功率。915的ELRS能达到比黑羊150Hz更快的200Hz，延迟低于黑羊。2.4g的ELRS能到地表最强的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/02/13">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
+        </div>
     
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ELRS">ELRS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="高频头">高频头</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-    <!-- paginator  -->
+    <!-- Mathjax -->
     
 </main>
 
@@ -740,6 +762,23 @@ ELRS有什么意义？超低延迟和更大的射频功率。915的ELRS能达到
 
         </div>
         <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>目录</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Blackbox%E8%B0%83%E6%95%B4FPV%E6%97%A0%E4%BA%BA%E6%9C%BA%E7%9A%84%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%92%8CPID"><span class="toc-number">1.</span> <span class="toc-text">如何使用Blackbox调整FPV无人机的滤波器和PID </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-number">3.</span> <span class="toc-text">入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E7%9B%AE%E6%A0%87"><span class="toc-number">3.1.</span> <span class="toc-text">调整目标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8PIDToolBox%E5%92%8CBlackbox"><span class="toc-number">5.</span> <span class="toc-text">如何使用PIDToolBox和Blackbox</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E8%AE%BE%E4%B8%AD%E3%80%82%E3%80%82%E3%80%82-%E5%88%AB%E6%80%A5%E3%80%82"><span class="toc-number">6.</span> <span class="toc-text">建设中。。。  别急。</span></a></li></ol>
+            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -981,6 +1020,8 @@ ELRS有什么意义？超低延迟和更大的射频功率。915的ELRS能达到
         <!-- CNZZ -->
         
         <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
         
         <!-- mermaid -->
         
