@@ -1,3 +1,6 @@
+https://gegexd.com/lib/fancybox/README.html
+https://gegexd.com/lib/jquery_lazyload/README.html
+https://gegexd.com/lib/jquery_lazyload/bower.json
 https://gegexd.com/2023/0819/
 https://gegexd.com/2023/0212/
 https://gegexd.com/2023/0208/
