@@ -1,11 +1,11 @@
 https://gegexd.com/lib/fancybox/README.html
-https://gegexd.com/lib/jquery_lazyload/README.html
 https://gegexd.com/lib/jquery_lazyload/bower.json
-https://gegexd.com/2023/0819/
-https://gegexd.com/2023/0212/
-https://gegexd.com/2023/0208/
-https://gegexd.com/2023/0211/
-https://gegexd.com/2023/0210/
+https://gegexd.com/lib/jquery_lazyload/README.html
+https://gegexd.com/posts/183dd36a.html
+https://gegexd.com/posts/2877873.html
+https://gegexd.com/posts/e59e5a59.html
+https://gegexd.com/posts/cf902753.html
+https://gegexd.com/posts/70b95230.html
 https://gegexd.com/about/index.html
 https://gegexd.com/404.html
 https://gegexd.com/categories/index.html
