@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gegexd.com/posts/Betaflight-JC.html</loc>
+    <loc>https://gegexd.com/posts/FPV-APP.html</loc>
     
-    <lastmod>2023-08-29</lastmod>
+    <lastmod>2024-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,15 +30,6 @@
   
   <url>
     <loc>https://gegexd.com/posts/Skyzone-04L.html</loc>
-    
-    <lastmod>2023-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/posts/FPV-APP.html</loc>
     
     <lastmod>2023-08-29</lastmod>
     
@@ -154,27 +145,6 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/tags/Betaflight/</loc>
-    <lastmod>2024-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/BF/</loc>
-    <lastmod>2024-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/%E8%B0%83%E5%8F%82/</loc>
-    <lastmod>2024-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gegexd.com/tags/%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,13 +176,6 @@
   
   <url>
     <loc>https://gegexd.com/categories/Skyzone/</loc>
-    <lastmod>2024-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/categories/Betaflight/</loc>
     <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
