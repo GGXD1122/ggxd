@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gegexd.com/posts/FPV-Battery-Safety.html</loc>
+
+    <lastmod>2025-02-15</lastmod>
+
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://gegexd.com/posts/FPV-APP.html</loc>
     
     <lastmod>2025-01-10</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>https://gegexd.com/</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2025-02-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -132,11 +141,18 @@
   
   <url>
     <loc>https://gegexd.com/tags/FPV/</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://gegexd.com/tags/%E7%94%B5%E6%B1%A0/</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
   <url>
     <loc>https://gegexd.com/tags/%E7%9C%BC%E9%95%9C/</loc>
     <lastmod>2025-02-12</lastmod>
@@ -190,7 +206,7 @@
   
   <url>
     <loc>https://gegexd.com/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-02-12</lastmod>
+    <lastmod>2025-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
