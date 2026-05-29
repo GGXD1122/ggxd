@@ -1,6 +1,8 @@
 # hexo robots.txt
 User-agent: *
 Allow: /
+Disallow: /lib/
+Disallow: /baidu_urls.txt
 
 Sitemap: https://gegexd.com/sitemap.xml
 Sitemap: https://gegexd.com/baidusitemap.xml
