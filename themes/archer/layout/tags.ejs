@@ -1,0 +1,10 @@
+<main class="main post-page">
+    <article class="article-entry">
+        <h2>标签</h2>
+        <div class="tag-list">
+            <% site.tags.sort('name').each(function(tag) { %>
+                <a class="post-tag" href="<%- url_for(tag.path) %>"><%- tag.name %> (<%- tag.length %>)</a>
+            <% }) %>
+        </div>
+    </article>
+</main>

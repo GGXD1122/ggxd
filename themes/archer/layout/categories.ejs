@@ -1,0 +1,10 @@
+<main class="main post-page">
+    <article class="article-entry">
+        <h2>分类</h2>
+        <div class="category-list">
+            <% site.categories.sort('name').each(function(category) { %>
+                <p><a href="<%- url_for(category.path) %>"><%- category.name %> (<%- category.length %>)</a></p>
+            <% }) %>
+        </div>
+    </article>
+</main>
