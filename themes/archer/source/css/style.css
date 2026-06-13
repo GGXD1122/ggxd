@@ -11,13 +11,14 @@
 .post-body .intro-title{display:inline-block;max-width:100%;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:#fff;font-size:3.35rem;line-height:1.16;box-shadow:none;text-shadow:0 3px 18px rgba(0,0,0,.48),0 1px 3px rgba(0,0,0,.42)}.post-body .post-intros{display:inline-flex;flex-direction:column;align-items:flex-start;margin-top:.75rem;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;text-shadow:0 2px 12px rgba(0,0,0,.42),0 1px 2px rgba(0,0,0,.36)}.post-body .post-intro-tags,.post-body .post-intro-tags a{color:rgba(255,255,255,.88)}.post-body .post-intro-read,.post-body .post-intro-meta{color:rgba(255,255,255,.78)}.post-body .site-intro-floating-tag{opacity:.34}.post-body .site-intro-floating-tag:nth-child(1){--tag-x:14%!important;--tag-y:16%!important}.post-body .site-intro-floating-tag:nth-child(2){--tag-x:86%!important;--tag-y:22%!important}.post-body .site-intro-floating-tag:nth-child(3){--tag-x:16%!important;--tag-y:82%!important}.post-body .site-intro-floating-tag:nth-child(4){--tag-x:84%!important;--tag-y:78%!important}.post-body .site-intro-floating-tag:nth-child(n+5){display:none}
 
 /* FPV software download buttons */
-.software-download-panel{box-sizing:border-box;margin:.8rem 0 1.35rem;padding:1rem;border:1px solid rgba(0,0,0,.08);border-radius:8px;background:rgba(0,0,0,.025)}
-.software-download-version{margin:0 0 .75rem;color:#777;font-size:.92rem;font-weight:700;line-height:1.35}
-.software-download-actions{display:flex;flex-wrap:wrap;gap:.55rem}
-.article-entry .software-download-btn{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:2.35rem;padding:0 .95rem;border:1px solid rgba(247,83,87,.42);border-radius:7px;background:#f75357;color:#fff;font-size:.92rem;font-weight:700;line-height:1;transition:transform .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease}
-.article-entry .software-download-btn:hover{transform:translateY(-1px);border-bottom:1px solid rgba(247,83,87,.7);background:#ff686c;color:#fff}
-.article-entry .software-download-btn i{width:1rem;margin-right:.45rem;text-align:center;font-size:1rem}
-.article-entry .software-download-btn-secondary{background:transparent;color:#f75357}
-.article-entry .software-download-btn-secondary:hover{background:rgba(247,83,87,.1);color:#f75357}
-.software-download-note{margin-top:.85rem;color:#777;font-size:.9rem;line-height:1.6}
+.software-page-intro{margin:1rem 0 1.6rem;line-height:1.75;color:inherit}
+.software-download-panel{box-sizing:border-box;margin:.75rem 0 1.35rem;padding:0;background:transparent;border:0}
+.software-download-version{margin:0 0 .65rem;color:#777;font-size:.9rem;font-weight:700;line-height:1.35}
+.software-download-actions{display:flex;flex-wrap:wrap;gap:.58rem}
+.article-entry a.software-download-btn{display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;min-height:2.25rem;padding:0 1.05rem!important;border:1px solid rgba(247,83,87,.58)!important;border-radius:999px!important;background:#f75357!important;color:#fff!important;font-size:.9rem;font-weight:800;line-height:1;word-break:normal;text-decoration:none;box-shadow:0 8px 18px rgba(247,83,87,.16);transition:transform .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease,box-shadow .16s ease}
+.article-entry a.software-download-btn:hover{transform:translateY(-1px);border-bottom:1px solid rgba(247,83,87,.85)!important;background:#ff686c!important;color:#fff!important;box-shadow:0 10px 22px rgba(247,83,87,.22)}
+.article-entry a.software-download-btn i{width:1rem;margin-right:.42rem;text-align:center;font-size:.95rem}
+.article-entry a.software-download-btn-secondary{background:rgba(247,83,87,.08)!important;color:#f75357!important;box-shadow:none}
+.article-entry a.software-download-btn-secondary:hover{background:rgba(247,83,87,.16)!important;color:#ff686c!important}
+.software-download-note{margin-top:.75rem;color:#777;font-size:.88rem;line-height:1.6}
 .software-download-note code{margin:0 .12rem}
