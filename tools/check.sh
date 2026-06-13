@@ -1,0 +1,26 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+echo "==> Checking repository"
+git diff --check
+
+echo "==> Building Hexo site"
+./node_modules/.bin/hexo clean
+./node_modules/.bin/hexo generate
+
+echo "==> Checking generated core files"
+test -f public/index.html
+test -f public/sitemap.xml
+test -f public/baidusitemap.xml
+test -f public/content.json
+
+echo "==> Checking asset version"
+VERSION="$(awk -F': ' '/^source_version:/{print $2}' themes/archer/_config.yml | tr -d ' ')"
+if [[ -n "$VERSION" ]]; then
+  rg -q "style\\.css\\?v=$VERSION" public/index.html
+fi
+
+echo "==> Check complete"

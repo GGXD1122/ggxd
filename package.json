@@ -6,7 +6,10 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "check": "tools/check.sh",
+    "publish": "tools/publish.sh",
+    "cleanup": "tools/cleanup.sh"
   },
   "hexo": {
     "version": "6.3.0"
