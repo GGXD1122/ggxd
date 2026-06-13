@@ -13,3 +13,9 @@ header.header-mobile{background-color:transparent}
 .site-intro-floating-tag:nth-child(3n){color:rgba(247,83,87,.58)}
 .intro-title,.intro-subtitle{color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.52),0 1px 3px rgba(0,0,0,.48)}
 .home-body .intro-subtitle,.about-body .intro-subtitle{color:rgba(255,255,255,.72)}
+
+.software-download-panel{padding:.85rem;margin:.7rem 0 1.1rem}
+.software-download-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.article-entry .software-download-btn{width:100%;min-height:2.45rem;padding:0 .55rem;font-size:.86rem;white-space:nowrap}
+.article-entry .software-download-btn i{margin-right:.35rem}
+.software-download-note{font-size:.84rem}
