@@ -12,5 +12,5 @@
 .software-download-version,.software-download-note{color:rgba(255,255,255,.58)}
 .article-entry a.software-download-btn{color:#fff!important;background:#f75357!important;border-color:rgba(247,83,87,.62)!important}
 .article-entry a.software-download-btn:hover{color:#fff!important;background:#ff686c!important;border-bottom-color:rgba(247,83,87,.86)!important}
-.article-entry a.software-download-btn-secondary{color:#ff686c!important;background:rgba(247,83,87,.1)!important}
-.article-entry a.software-download-btn-secondary:hover{color:#fff!important;background:rgba(247,83,87,.24)!important}
+.article-entry a.software-download-btn-secondary{color:#fff!important;background:#f75357!important}
+.article-entry a.software-download-btn-secondary:hover{color:#fff!important;background:#ff686c!important}

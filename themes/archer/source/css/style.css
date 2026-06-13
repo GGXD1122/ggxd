@@ -15,10 +15,11 @@
 .software-download-panel{box-sizing:border-box;margin:.75rem 0 1.35rem;padding:0;background:transparent;border:0}
 .software-download-version{margin:0 0 .65rem;color:#777;font-size:.9rem;font-weight:700;line-height:1.35}
 .software-download-actions{display:flex;flex-wrap:wrap;gap:.58rem}
-.article-entry a.software-download-btn{display:inline-flex!important;align-items:center;justify-content:center;box-sizing:border-box;min-height:2.25rem;padding:0 1.05rem!important;border:1px solid rgba(247,83,87,.58)!important;border-radius:999px!important;background:#f75357!important;color:#fff!important;font-size:.9rem;font-weight:800;line-height:1;word-break:normal;text-decoration:none;box-shadow:0 8px 18px rgba(247,83,87,.16);transition:transform .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease,box-shadow .16s ease}
+.article-entry a.software-download-btn{display:inline-flex!important;align-items:center;justify-content:center;gap:.48rem;box-sizing:border-box;min-height:2.25rem;padding:0 1.05rem!important;border:1px solid rgba(247,83,87,.58)!important;border-radius:999px!important;background:#f75357!important;color:#fff!important;font-size:.9rem;font-weight:800;line-height:1;word-break:normal;text-decoration:none;box-shadow:0 8px 18px rgba(247,83,87,.16);transition:transform .16s ease,border-color .16s ease,background-color .16s ease,color .16s ease,box-shadow .16s ease}
 .article-entry a.software-download-btn:hover{transform:translateY(-1px);border-bottom:1px solid rgba(247,83,87,.85)!important;background:#ff686c!important;color:#fff!important;box-shadow:0 10px 22px rgba(247,83,87,.22)}
-.article-entry a.software-download-btn i{width:1rem;margin-right:.42rem;text-align:center;font-size:.95rem}
-.article-entry a.software-download-btn-secondary{background:rgba(247,83,87,.08)!important;color:#f75357!important;box-shadow:none}
-.article-entry a.software-download-btn-secondary:hover{background:rgba(247,83,87,.16)!important;color:#ff686c!important}
+.article-entry a.software-download-btn i{width:1rem;text-align:center;font-size:.95rem;flex:0 0 auto}
+.article-entry a.software-download-btn-secondary{background:#f75357!important;color:#fff!important;box-shadow:0 8px 18px rgba(247,83,87,.16)}
+.article-entry a.software-download-btn-secondary:hover{background:#ff686c!important;color:#fff!important}
+.article-entry img.software-title-icon{display:inline-block!important;width:1.45rem!important;height:1.45rem!important;margin:0 .48rem .14rem 0!important;border-radius:.38rem;box-shadow:none!important;vertical-align:middle}
 .software-download-note{margin-top:.75rem;color:#777;font-size:.88rem;line-height:1.6}
 .software-download-note code{margin:0 .12rem}
