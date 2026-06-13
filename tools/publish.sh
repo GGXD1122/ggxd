@@ -23,7 +23,7 @@ if [[ -n "$(git status --porcelain)" ]]; then
   fi
 
   echo "==> Committing source changes"
-  git add -A
+  git add -A -- ':!*.swp' ':!*.swo' ':!.*.swp' ':!.*.swo'
   git commit -m "$MESSAGE"
 fi
 

@@ -6,6 +6,11 @@ cd "$ROOT"
 
 echo "==> Checking repository"
 git diff --check
+if git ls-files | rg -q '(^|/)\..*\.sw[op]$|\.sw[op]$'; then
+  echo "Swap files are tracked. Remove them before publishing."
+  git ls-files | rg '(^|/)\..*\.sw[op]$|\.sw[op]$'
+  exit 1
+fi
 
 echo "==> Building Hexo site"
 ./node_modules/.bin/hexo clean
