@@ -20,6 +20,6 @@
 .article-entry a.software-download-btn i{width:1rem;text-align:center;font-size:.95rem;flex:0 0 auto}
 .article-entry a.software-download-btn-secondary{background:#f75357!important;color:#fff!important;box-shadow:0 8px 18px rgba(247,83,87,.16)}
 .article-entry a.software-download-btn-secondary:hover{background:#ff686c!important;color:#fff!important}
-.article-entry img.software-title-icon{display:inline-block!important;width:1.45rem!important;height:1.45rem!important;margin:0 .48rem .14rem 0!important;border-radius:.38rem;box-shadow:none!important;vertical-align:middle}
+
 .software-download-note{margin-top:.75rem;color:#777;font-size:.88rem;line-height:1.6}
 .software-download-note code{margin:0 .12rem}
