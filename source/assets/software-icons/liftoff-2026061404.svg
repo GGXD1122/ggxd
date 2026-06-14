@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Liftoff">
+  <rect width="128" height="128" rx="28" fill="#101827"/>
+  <path d="M64 19l28 37-20 5 11 49-19-16-19 16 11-49-20-5 28-37Z" fill="#f75357"/>
+  <path d="M64 34l11 15-11 5-11-5 11-15Z" fill="#f8fafc"/>
+  <circle cx="64" cy="77" r="9" fill="#f8fafc"/>
+</svg>

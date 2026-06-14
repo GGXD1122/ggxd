@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="zadig">
+  <rect width="128" height="128" rx="28" fill="#20314d"/>
+  <path d="M31 34h66L55 94h45v14H28l42-60H31V34Z" fill="#e8f0ff"/>
+  <path d="M28 22h72" stroke="#7fb3ff" stroke-width="10" stroke-linecap="round"/>
+</svg>

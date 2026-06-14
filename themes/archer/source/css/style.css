@@ -21,18 +21,19 @@
 .article-entry a.software-download-btn-secondary{background:#f75357!important;color:#fff!important;box-shadow:0 8px 18px rgba(247,83,87,.16)}
 .article-entry a.software-download-btn-secondary:hover{background:#ff686c!important;color:#fff!important}
 
-.software-title-logo{display:inline-block;width:1.15rem;height:1.15rem;margin:0 .48rem .12rem 0;border-radius:.22rem;background-position:center;background-size:contain;background-repeat:no-repeat;vertical-align:middle}
-.software-title-logo-betaflight{background-image:url('/assets/software-icons/betaflight-2026061403.png')}
-.software-title-logo-inav{background-image:url('/assets/software-icons/inav-2026061403.png')}
-.software-title-logo-gyroflow{background-image:url('/assets/software-icons/gyroflow-2026061403.png')}
-.software-title-logo-expresslrs{background-image:url('/assets/software-icons/expresslrs-2026061403.png')}
-.software-title-logo-tbs{background-image:url('/assets/software-icons/tbs-2026061403.ico')}
-.software-title-logo-dji{background-image:url('/assets/software-icons/dji-2026061403.png')}
-.software-title-logo-esc{background-image:url('/assets/software-icons/esc-2026061403.png')}
-.software-title-logo-blheli{background-image:url('/assets/software-icons/blheli-2026061403.svg')}
-.software-title-logo-blackbox{background-image:url('/assets/software-icons/blackbox-2026061403.png')}
-.software-title-logo-pidtoolbox{background-image:url('/assets/software-icons/pidtoolbox-2026061403.svg')}
-.software-title-logo-liftoff{background-image:url('/assets/software-icons/liftoff-2026061403.svg')}
-.software-title-logo-zadig{background-image:url('/assets/software-icons/zadig.ico')}
+.software-title-logo{display:inline-block;width:1.9rem;height:1.9rem;margin:0 .68rem .2rem 0;border:1px solid rgba(255,255,255,.1);border-radius:.5rem;background-color:rgba(255,255,255,.08);background-position:center;background-size:84% 84%;background-repeat:no-repeat;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14),0 .28rem .75rem rgba(0,0,0,.18);vertical-align:middle}
+.software-title-logo-betaflight{background-image:url('/assets/software-icons/betaflight-2026061404.png')}
+.software-title-logo-inav{background-image:url('/assets/software-icons/inav-2026061404.png')}
+.software-title-logo-gyroflow{background-image:url('/assets/software-icons/gyroflow-2026061404.png')}
+.software-title-logo-expresslrs{background-image:url('/assets/software-icons/expresslrs-2026061404.png')}
+.software-title-logo-tbs{background-image:url('/assets/software-icons/tbs-2026061404.svg')}
+.software-title-logo-dji{background-image:url('/assets/software-icons/dji-2026061404.png')}
+.software-title-logo-esc{background-image:url('/assets/software-icons/esc-2026061404.png')}
+.software-title-logo-blheli{background-image:url('/assets/software-icons/blheli-2026061404.svg')}
+.software-title-logo-blackbox{background-image:url('/assets/software-icons/blackbox-2026061404.png')}
+.software-title-logo-pidtoolbox{background-image:url('/assets/software-icons/pidtoolbox-2026061404.svg')}
+.software-title-logo-liftoff{background-image:url('/assets/software-icons/liftoff-2026061404.svg')}
+.software-title-logo-zadig{background-image:url('/assets/software-icons/zadig-2026061404.svg')}
+.software-title-logo-gyroflow,.software-title-logo-dji{background-color:#f8fafc;background-size:78% 78%}
 .software-download-note{margin-top:.75rem;color:#777;font-size:.88rem;line-height:1.6}
 .software-download-note code{margin:0 .12rem}

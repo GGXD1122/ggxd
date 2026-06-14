@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="BLHeliSuite32">
+  <rect width="128" height="128" rx="28" fill="#101827"/>
+  <path d="M25 84V35h25c12 0 20 6 20 16 0 6-3 10-8 13 8 2 13 8 13 17 0 12-9 19-25 19H25Zm17-30h8c5 0 8-2 8-7s-3-7-9-7h-7v14Zm0 32h10c7 0 10-3 10-8s-4-8-11-8h-9v16Z" fill="#f8fafc"/>
+  <path d="M83 35h17v65H83V35Z" fill="#38bdf8"/>
+  <path d="M22 105h84" stroke="#f75357" stroke-width="9" stroke-linecap="round"/>
+</svg>
