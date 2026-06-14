@@ -22,17 +22,17 @@
 .article-entry a.software-download-btn-secondary:hover{background:#ff686c!important;color:#fff!important}
 
 .software-title-logo{display:inline-block;width:1.15rem;height:1.15rem;margin:0 .48rem .12rem 0;border-radius:.22rem;background-position:center;background-size:contain;background-repeat:no-repeat;vertical-align:middle}
-.software-title-logo-betaflight{background-image:url('/assets/software-icons/betaflight.png')}
-.software-title-logo-inav{background-image:url('/assets/software-icons/inav.png')}
-.software-title-logo-gyroflow{background-image:url('/assets/software-icons/gyroflow.png')}
-.software-title-logo-expresslrs{background-image:url('/assets/software-icons/expresslrs.png')}
-.software-title-logo-tbs{background-image:url('/assets/software-icons/tbs.ico')}
-.software-title-logo-dji{background-image:url('/assets/software-icons/dji.png')}
-.software-title-logo-esc{background-image:url('/assets/software-icons/esc.png')}
-.software-title-logo-blheli{background-image:url('/assets/software-icons/blheli.svg')}
-.software-title-logo-blackbox{background-image:url('/assets/software-icons/blackbox.png')}
-.software-title-logo-pidtoolbox{background-image:url('/assets/software-icons/pidtoolbox.svg')}
-.software-title-logo-liftoff{background-image:url('/assets/software-icons/liftoff.svg')}
+.software-title-logo-betaflight{background-image:url('/assets/software-icons/betaflight-2026061403.png')}
+.software-title-logo-inav{background-image:url('/assets/software-icons/inav-2026061403.png')}
+.software-title-logo-gyroflow{background-image:url('/assets/software-icons/gyroflow-2026061403.png')}
+.software-title-logo-expresslrs{background-image:url('/assets/software-icons/expresslrs-2026061403.png')}
+.software-title-logo-tbs{background-image:url('/assets/software-icons/tbs-2026061403.ico')}
+.software-title-logo-dji{background-image:url('/assets/software-icons/dji-2026061403.png')}
+.software-title-logo-esc{background-image:url('/assets/software-icons/esc-2026061403.png')}
+.software-title-logo-blheli{background-image:url('/assets/software-icons/blheli-2026061403.svg')}
+.software-title-logo-blackbox{background-image:url('/assets/software-icons/blackbox-2026061403.png')}
+.software-title-logo-pidtoolbox{background-image:url('/assets/software-icons/pidtoolbox-2026061403.svg')}
+.software-title-logo-liftoff{background-image:url('/assets/software-icons/liftoff-2026061403.svg')}
 .software-title-logo-zadig{background-image:url('/assets/software-icons/zadig.ico')}
 .software-download-note{margin-top:.75rem;color:#777;font-size:.88rem;line-height:1.6}
 .software-download-note code{margin:0 .12rem}
