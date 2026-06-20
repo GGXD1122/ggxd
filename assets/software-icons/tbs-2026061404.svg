@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="TBS Agent">
+  <rect width="128" height="128" rx="28" fill="#0b0c0e"/>
+  <path d="M20 36h88v20H78v48H50V56H20V36Z" fill="#f4f4f5"/>
+  <path d="M24 26h80" stroke="#ef233c" stroke-width="10" stroke-linecap="round"/>
+  <path d="M34 106h60" stroke="#ef233c" stroke-width="8" stroke-linecap="round"/>
+</svg>
