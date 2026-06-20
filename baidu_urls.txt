@@ -1,4 +1,3 @@
-https://gegexd.com/posts/test-page.html
 https://gegexd.com/posts/macOS-Mole.html
 https://gegexd.com/posts/FPV-APP.html
 https://gegexd.com/posts/Betaflight-JC.html
