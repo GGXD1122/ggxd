@@ -7,7 +7,7 @@
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
     var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
-    var storageKey = 'ggxd.siteBootLoader.seen.v12';
+    var storageKey = 'ggxd.siteBootLoader.seen.v13';
     var start = 0;
     var reducedMotion = false;
     var pageLoaded = document.readyState === 'complete';
@@ -21,15 +21,14 @@
     } catch (err) {}
 
     var canvas = loader.querySelector('.site-boot-canvas');
-    var targetTitle = document.querySelector('.home-body .intro-title');
     var gl = !reducedMotion && canvas ? canvas.getContext('webgl', { antialias: true, alpha: false, powerPreference: 'high-performance' }) : null;
     var rafId = 0;
     var running = true;
     var fading = false;
 
     function finishLoader() {
-        document.documentElement.classList.remove('site-boot-title-handoff');
-        document.documentElement.classList.remove('site-boot-title-ready');
+        document.documentElement.classList.remove('site-boot-intro-hidden');
+        document.documentElement.classList.add('site-boot-intro-visible');
         if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
         loader = null;
     }
@@ -40,27 +39,6 @@
         } catch (err) {}
     }
 
-    function prepareTitleHandoff() {
-        var bootName = loader.querySelector('.site-boot-name');
-        var bootText = loader.querySelector('.site-boot-name span');
-        if (!bootName || !bootText || !targetTitle) return false;
-
-        var bootRect = bootText.getBoundingClientRect();
-        var targetRect = targetTitle.getBoundingClientRect();
-        if (!bootRect.width || !bootRect.height || !targetRect.width || !targetRect.height) return false;
-
-        var dx = (targetRect.left + targetRect.width / 2) - (bootRect.left + bootRect.width / 2);
-        var dy = (targetRect.top + targetRect.height / 2) - (bootRect.top + bootRect.height / 2);
-        var scale = Math.max(0.45, Math.min(1.25, targetRect.width / bootRect.width));
-        var targetStyle = window.getComputedStyle(targetTitle);
-        bootName.style.setProperty('--site-boot-title-x', dx + 'px');
-        bootName.style.setProperty('--site-boot-title-y', dy + 'px');
-        bootName.style.setProperty('--site-boot-title-scale', scale);
-        bootText.style.setProperty('--site-boot-title-color', targetStyle.color || '#fff');
-        bootText.style.setProperty('--site-boot-title-shadow', targetStyle.textShadow || 'none');
-        return true;
-    }
-
     function beginFade() {
         if (!loader || fading) return;
         fading = true;
@@ -68,12 +46,6 @@
         if (rafId) cancelAnimationFrame(rafId);
         markSeen();
         loader.style.setProperty('--site-boot-fade-duration', fadeDuration + 'ms');
-        if (prepareTitleHandoff()) {
-            document.documentElement.classList.add('site-boot-title-handoff');
-            loader.classList.add('site-boot-loader-handoff');
-            window.setTimeout(finishLoader, 1680);
-            return;
-        }
         loader.classList.add('site-boot-loader-fading');
         window.setTimeout(finishLoader, fadeDuration + 80);
     }
@@ -87,8 +59,8 @@
     function startIntro() {
         if (!loader || start) return;
         start = Date.now();
-        if (targetTitle) {
-            document.documentElement.classList.add('site-boot-title-ready');
+        if (document.body && document.body.classList.contains('home-body')) {
+            document.documentElement.classList.add('site-boot-intro-hidden');
         }
         loader.classList.add('site-boot-loader-active');
         window.setTimeout(beginFade, Math.max(0, maxDuration - fadeDuration));
