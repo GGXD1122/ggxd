@@ -1,5 +1,5 @@
 <% if (!theme.boot_shader || theme.boot_shader.enable !== false) { %>
-    <div id="site-boot-loader" class="site-boot-loader" data-session-once="<%- theme.boot_shader && theme.boot_shader.session_once === false ? 'false' : 'true' %>" data-min-duration="<%- theme.boot_shader && theme.boot_shader.min_duration ? theme.boot_shader.min_duration : 1800 %>" data-max-duration="<%- theme.boot_shader && theme.boot_shader.max_duration ? theme.boot_shader.max_duration : 5200 %>" aria-hidden="true">
+    <div id="site-boot-loader" class="site-boot-loader" data-session-once="<%- theme.boot_shader && theme.boot_shader.session_once === false ? 'false' : 'true' %>" data-min-duration="<%- theme.boot_shader && theme.boot_shader.min_duration ? theme.boot_shader.min_duration : 1800 %>" data-max-duration="<%- theme.boot_shader && theme.boot_shader.max_duration ? theme.boot_shader.max_duration : 5200 %>" data-fade-duration="<%- theme.boot_shader && theme.boot_shader.fade_duration ? theme.boot_shader.fade_duration : 900 %>" aria-hidden="true">
         <canvas class="site-boot-canvas" aria-hidden="true"></canvas>
     </div>
     <script>
@@ -7,7 +7,7 @@
             try {
                 var forceBoot = /(?:\?|&)boot=1(?:&|$)/.test(window.location.search);
                 var shouldSkip = !forceBoot && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                if (!forceBoot && !shouldSkip && sessionStorage.getItem('ggxd.siteBootLoader.seen.v4') === '1') {
+                if (!forceBoot && !shouldSkip && sessionStorage.getItem('ggxd.siteBootLoader.seen.v5') === '1') {
                     shouldSkip = true;
                 }
                 if (shouldSkip) {

@@ -6,7 +6,8 @@
     var once = loader.getAttribute('data-session-once') !== 'false';
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 1800;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
-    var storageKey = 'ggxd.siteBootLoader.seen.v4';
+    var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 900;
+    var storageKey = 'ggxd.siteBootLoader.seen.v5';
     var start = Date.now();
     var reducedMotion = false;
 
@@ -22,31 +23,36 @@
     var gl = !reducedMotion && canvas ? canvas.getContext('webgl', { antialias: true, alpha: false, powerPreference: 'high-performance' }) : null;
     var rafId = 0;
     var running = true;
+    var fading = false;
 
-    function closeLoader() {
-        if (!loader || loader.classList.contains('site-boot-loader-hide')) return;
+    function finishLoader() {
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+        loader = null;
+    }
+
+    function beginFade() {
+        if (!loader || fading) return;
+        fading = true;
         running = false;
         if (rafId) cancelAnimationFrame(rafId);
         try {
             if (!forceBoot && once) sessionStorage.setItem(storageKey, '1');
         } catch (err) {}
-        loader.classList.add('site-boot-loader-hide');
-        window.setTimeout(function () {
-            if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
-            loader = null;
-        }, 720);
+        loader.style.setProperty('--site-boot-fade-duration', fadeDuration + 'ms');
+        loader.classList.add('site-boot-loader-fading');
+        window.setTimeout(finishLoader, fadeDuration + 80);
     }
 
-    function scheduleClose() {
+    function scheduleFade() {
         var elapsed = Date.now() - start;
-        window.setTimeout(closeLoader, Math.max(0, minDuration - elapsed));
+        window.setTimeout(beginFade, Math.max(0, minDuration - fadeDuration - elapsed));
     }
 
-    window.setTimeout(closeLoader, maxDuration);
+    window.setTimeout(beginFade, Math.max(0, maxDuration - fadeDuration));
     if (document.readyState === 'complete') {
-        scheduleClose();
+        scheduleFade();
     } else {
-        window.addEventListener('load', scheduleClose, { once: true });
+        window.addEventListener('load', scheduleFade, { once: true });
     }
 
     if (!gl) {

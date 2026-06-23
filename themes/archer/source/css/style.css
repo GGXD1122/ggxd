@@ -40,7 +40,8 @@
 
 /* First-visit shader boot loader */
 html.site-boot-skip .site-boot-loader{display:none}
-.site-boot-loader{position:fixed;inset:0;z-index:2147483000;overflow:hidden;background:#000;opacity:1;visibility:visible;transition:opacity .68s ease,visibility .68s ease}
+.site-boot-loader{position:fixed;inset:0;z-index:2147483000;overflow:hidden;background:#000;opacity:1;visibility:visible;transition:opacity var(--site-boot-fade-duration,900ms) ease,visibility var(--site-boot-fade-duration,900ms) ease}
+.site-boot-loader-fading{opacity:0;visibility:hidden;pointer-events:none}
 .site-boot-loader-hide{opacity:0;visibility:hidden;pointer-events:none}
 .site-boot-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:#000}
 @media (prefers-reduced-motion:reduce){.site-boot-loader{display:none}}
