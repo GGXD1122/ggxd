@@ -7,9 +7,10 @@
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
     var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
-    var storageKey = 'ggxd.siteBootLoader.seen.v7';
-    var start = Date.now();
+    var storageKey = 'ggxd.siteBootLoader.seen.v8';
+    var start = 0;
     var reducedMotion = false;
+    var pageLoaded = document.readyState === 'complete';
 
     try {
         reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -44,19 +45,29 @@
     }
 
     function scheduleFade() {
+        if (!start) return;
         var elapsed = Date.now() - start;
         window.setTimeout(beginFade, Math.max(0, minDuration - fadeDuration - elapsed));
     }
 
-    window.setTimeout(beginFade, Math.max(0, maxDuration - fadeDuration));
-    if (document.readyState === 'complete') {
-        scheduleFade();
-    } else {
-        window.addEventListener('load', scheduleFade, { once: true });
+    function startIntro() {
+        if (!loader || start) return;
+        start = Date.now();
+        loader.classList.add('site-boot-loader-active');
+        window.setTimeout(beginFade, Math.max(0, maxDuration - fadeDuration));
+        if (pageLoaded) scheduleFade();
+    }
+
+    if (!pageLoaded) {
+        window.addEventListener('load', function () {
+            pageLoaded = true;
+            scheduleFade();
+        }, { once: true });
     }
 
     if (!gl) {
         loader.classList.add('site-boot-loader-css');
+        window.requestAnimationFrame(startIntro);
         return;
     }
 
@@ -105,6 +116,7 @@
     var fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
     if (!vertex || !fragment) {
         loader.classList.add('site-boot-loader-css');
+        window.requestAnimationFrame(startIntro);
         return;
     }
 
@@ -114,6 +126,7 @@
     gl.linkProgram(program);
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
         loader.classList.add('site-boot-loader-css');
+        window.requestAnimationFrame(startIntro);
         return;
     }
 
@@ -155,6 +168,7 @@
         shaderTime += 0.05;
         gl.uniform1f(time, shaderTime);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
+        if (!start) window.requestAnimationFrame(startIntro);
         rafId = requestAnimationFrame(render);
     }
 
