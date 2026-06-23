@@ -7,7 +7,7 @@
             try {
                 var forceBoot = /(?:\?|&)boot=1(?:&|$)/.test(window.location.search);
                 var shouldSkip = !forceBoot && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                if (!forceBoot && !shouldSkip && sessionStorage.getItem('ggxd.siteBootLoader.seen.v3') === '1') {
+                if (!forceBoot && !shouldSkip && sessionStorage.getItem('ggxd.siteBootLoader.seen.v4') === '1') {
                     shouldSkip = true;
                 }
                 if (shouldSkip) {
