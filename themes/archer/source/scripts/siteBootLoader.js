@@ -7,7 +7,7 @@
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
     var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
-    var storageKey = 'ggxd.siteBootLoader.seen.v8';
+    var storageKey = 'ggxd.siteBootLoader.seen.v9';
     var start = 0;
     var reducedMotion = false;
     var pageLoaded = document.readyState === 'complete';
@@ -27,8 +27,35 @@
     var fading = false;
 
     function finishLoader() {
+        document.documentElement.classList.remove('site-boot-title-handoff');
         if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
         loader = null;
+    }
+
+    function markSeen() {
+        try {
+            if (!forceBoot && once) sessionStorage.setItem(storageKey, '1');
+        } catch (err) {}
+    }
+
+    function prepareTitleHandoff() {
+        var bootName = loader.querySelector('.site-boot-name');
+        var bootText = loader.querySelector('.site-boot-name span');
+        var targetTitle = document.querySelector('.home-body .intro-title');
+        if (!bootName || !bootText || !targetTitle) return false;
+        if (bootText.textContent.trim() !== targetTitle.textContent.trim()) return false;
+
+        var bootRect = bootText.getBoundingClientRect();
+        var targetRect = targetTitle.getBoundingClientRect();
+        if (!bootRect.width || !bootRect.height || !targetRect.width || !targetRect.height) return false;
+
+        var dx = (targetRect.left + targetRect.width / 2) - (bootRect.left + bootRect.width / 2);
+        var dy = (targetRect.top + targetRect.height / 2) - (bootRect.top + bootRect.height / 2);
+        var scale = Math.max(0.45, Math.min(1.25, targetRect.width / bootRect.width));
+        bootName.style.setProperty('--site-boot-title-x', dx + 'px');
+        bootName.style.setProperty('--site-boot-title-y', dy + 'px');
+        bootName.style.setProperty('--site-boot-title-scale', scale);
+        return true;
     }
 
     function beginFade() {
@@ -36,10 +63,17 @@
         fading = true;
         running = false;
         if (rafId) cancelAnimationFrame(rafId);
-        try {
-            if (!forceBoot && once) sessionStorage.setItem(storageKey, '1');
-        } catch (err) {}
+        markSeen();
         loader.style.setProperty('--site-boot-fade-duration', fadeDuration + 'ms');
+        if (prepareTitleHandoff()) {
+            document.documentElement.classList.add('site-boot-title-handoff');
+            loader.classList.add('site-boot-loader-handoff');
+            window.setTimeout(function () {
+                document.documentElement.classList.remove('site-boot-title-handoff');
+            }, 900);
+            window.setTimeout(finishLoader, 1120);
+            return;
+        }
         loader.classList.add('site-boot-loader-fading');
         window.setTimeout(finishLoader, fadeDuration + 80);
     }
