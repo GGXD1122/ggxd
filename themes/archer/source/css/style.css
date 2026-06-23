@@ -51,12 +51,13 @@ html.site-boot-skip .site-boot-loader{display:none}
 .site-boot-loader-active .site-boot-name span{animation:site-boot-name-sheen 2.8s ease-in-out .68s both}
 .site-boot-loader-handoff{background:transparent;pointer-events:none}
 .site-boot-loader-handoff .site-boot-canvas{animation:site-boot-canvas-out 1.15s ease forwards}
-.site-boot-loader-handoff .site-boot-name{animation:site-boot-name-to-intro 1.35s cubic-bezier(.16,1,.3,1) forwards}
-.site-boot-loader-handoff .site-boot-name span{animation:none;background-position:0 50%}
+.site-boot-loader-handoff .site-boot-name{animation:site-boot-name-to-intro 1.45s cubic-bezier(.16,1,.3,1) forwards}
+.site-boot-loader-handoff .site-boot-name span{animation:site-boot-title-style-to-home 1.05s ease forwards;background-position:0 50%}
 html.site-boot-title-handoff .home-body .intro-title{opacity:0!important;transform:translate(0,0)!important;transition:none!important}
 @keyframes site-boot-canvas-in{0%{opacity:0;filter:brightness(.42)}100%{opacity:1;filter:brightness(1)}}
 @keyframes site-boot-canvas-out{0%{opacity:1;filter:brightness(1)}100%{opacity:0;filter:brightness(.55)}}
 @keyframes site-boot-name-in{0%{opacity:0;filter:blur(18px);transform:scale(.92)}55%{opacity:.96;filter:blur(2px);transform:scale(1.02)}100%{opacity:.92;filter:blur(0);transform:scale(1)}}
-@keyframes site-boot-name-to-intro{0%{opacity:.92;filter:blur(0);transform:translate3d(0,0,0) scale(1)}72%{opacity:.96;filter:blur(0);transform:translate3d(var(--site-boot-title-x,0),var(--site-boot-title-y,0),0) scale(var(--site-boot-title-scale,1))}100%{opacity:.96;filter:blur(0);transform:translate3d(var(--site-boot-title-x,0),var(--site-boot-title-y,0),0) scale(var(--site-boot-title-scale,1))}}
+@keyframes site-boot-name-to-intro{0%{opacity:.92;filter:blur(0);transform:translate3d(0,0,0) scale(1)}78%{opacity:.96;filter:blur(0);transform:translate3d(var(--site-boot-title-x,0),var(--site-boot-title-y,0),0) scale(var(--site-boot-title-scale,1))}100%{opacity:.96;filter:blur(0);transform:translate3d(var(--site-boot-title-x,0),var(--site-boot-title-y,0),0) scale(var(--site-boot-title-scale,1))}}
+@keyframes site-boot-title-style-to-home{0%{color:transparent;-webkit-text-fill-color:transparent;text-shadow:0 0 24px rgba(255,255,255,.18)}45%{color:transparent;-webkit-text-fill-color:transparent;text-shadow:0 0 24px rgba(255,255,255,.18)}100%{background:none;color:var(--site-boot-title-color,#fff);-webkit-text-fill-color:var(--site-boot-title-color,#fff);text-shadow:var(--site-boot-title-shadow,0 3px 18px rgba(0,0,0,.48),0 1px 3px rgba(0,0,0,.42))}}
 @keyframes site-boot-name-sheen{0%{background-position:120% 50%}100%{background-position:0 50%}}
 @media (prefers-reduced-motion:reduce){.site-boot-loader{display:none}}
