@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/posts/ExpressLRS.html</loc>
+    <loc>https://gegexd.com/posts/Betaflight-JC.html</loc>
     
     <lastmod>2026-06-20</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/posts/Betaflight-JC.html</loc>
+    <loc>https://gegexd.com/posts/ExpressLRS.html</loc>
     
     <lastmod>2026-06-20</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/posts/macOS-Mole.html</loc>
+    <loc>https://gegexd.com/posts/FPV-APP.html</loc>
     
     <lastmod>2026-06-20</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/posts/FPV-APP.html</loc>
+    <loc>https://gegexd.com/posts/macOS-Mole.html</loc>
     
     <lastmod>2026-06-20</lastmod>
     
@@ -92,20 +92,6 @@
 
   
   <url>
-    <loc>https://gegexd.com/tags/ELRS/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/%E9%AB%98%E9%A2%91%E5%A4%B4/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gegexd.com/tags/Betaflight/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -127,6 +113,20 @@
   </url>
   
   <url>
+    <loc>https://gegexd.com/tags/ELRS/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/%E9%AB%98%E9%A2%91%E5%A4%B4/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://gegexd.com/tags/Skyzone/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -142,6 +142,13 @@
   
   <url>
     <loc>https://gegexd.com/tags/%E7%9C%BC%E9%95%9C/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -175,24 +182,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://gegexd.com/tags/%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://gegexd.com/categories/ELRS/</loc>
+    <loc>https://gegexd.com/categories/Betaflight/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/Betaflight/</loc>
+    <loc>https://gegexd.com/categories/ELRS/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -206,14 +206,14 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://gegexd.com/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/</loc>
+    <loc>https://gegexd.com/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

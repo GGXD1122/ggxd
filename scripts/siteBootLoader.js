@@ -6,7 +6,7 @@
     var once = loader.getAttribute('data-session-once') !== 'false';
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 1800;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
-    var storageKey = 'ggxd.siteBootLoader.seen.v3';
+    var storageKey = 'ggxd.siteBootLoader.seen.v4';
     var start = Date.now();
     var reducedMotion = false;
 
