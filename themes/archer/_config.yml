@@ -219,6 +219,13 @@ math:
     # Version number '3' is for the latest '3.x' version of MathJax.
     version: 3.2.0
 
+# First-visit WebGL loading scene.
+boot_shader:
+  enable: true
+  session_once: true
+  min_duration: 1800
+  max_duration: 5200
+
 # ========== Experimental Options ========== #
 # NOTE: The options below are experimental options.
 # They may have browser compatibility issues or may cause a functional breakdown of the web page.
@@ -236,4 +243,4 @@ custom_font:
 # ========== Theme Dev ========== #
 # Ensure visitor to get the latest version of source.
 # Set a higher value before creating new release.
-source_version: 2026061501
+source_version: 2026062401

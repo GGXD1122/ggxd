@@ -19,6 +19,7 @@
     <% } else { %>
         <body class="page-body">
     <% } %>
+        <%- partial('_partial/site-boot-loader') %>
         <!-- header -->
         <%- partial('_partial/base-header') %>
         <!-- fixed footer -->
@@ -53,6 +54,7 @@
         <!-- import experimental options here -->
         <%- partial('_partial/custom-font', {}, {cache: true}) %>
         <!-- main func -->
+        <script src="<%- url_for('scripts/siteBootLoader.js') %>?v=<%- theme.source_version %>"></script>
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
