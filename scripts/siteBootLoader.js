@@ -7,7 +7,7 @@
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
     var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
-    var storageKey = 'ggxd.siteBootLoader.seen.v9';
+    var storageKey = 'ggxd.siteBootLoader.seen.v10';
     var start = 0;
     var reducedMotion = false;
     var pageLoaded = document.readyState === 'complete';
@@ -43,7 +43,6 @@
         var bootText = loader.querySelector('.site-boot-name span');
         var targetTitle = document.querySelector('.home-body .intro-title');
         if (!bootName || !bootText || !targetTitle) return false;
-        if (bootText.textContent.trim() !== targetTitle.textContent.trim()) return false;
 
         var bootRect = bootText.getBoundingClientRect();
         var targetRect = targetTitle.getBoundingClientRect();
@@ -70,8 +69,8 @@
             loader.classList.add('site-boot-loader-handoff');
             window.setTimeout(function () {
                 document.documentElement.classList.remove('site-boot-title-handoff');
-            }, 900);
-            window.setTimeout(finishLoader, 1120);
+            }, 1180);
+            window.setTimeout(finishLoader, 1480);
             return;
         }
         loader.classList.add('site-boot-loader-fading');
