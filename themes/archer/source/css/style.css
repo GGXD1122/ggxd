@@ -40,19 +40,7 @@
 
 /* First-visit shader boot loader */
 html.site-boot-skip .site-boot-loader{display:none}
-.site-boot-loader{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#050608;color:#fff;opacity:1;visibility:visible;transition:opacity .68s ease,visibility .68s ease;isolation:isolate}
+.site-boot-loader{position:fixed;inset:0;z-index:2147483000;overflow:hidden;background:#000;opacity:1;visibility:visible;transition:opacity .68s ease,visibility .68s ease}
 .site-boot-loader-hide{opacity:0;visibility:hidden;pointer-events:none}
-.site-boot-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:#050608}
-.site-boot-vignette{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 45%,transparent 0,rgba(0,0,0,.12) 42%,rgba(0,0,0,.78) 100%),linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5));pointer-events:none}
-.site-boot-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:0 1.5rem;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.48)}
-.site-boot-kicker{font:700 .72rem/1 "Oswald-Regular",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.18em;color:rgba(255,255,255,.58)}
-.site-boot-title{margin-top:.78rem;font:700 clamp(2.35rem,7vw,5.4rem)/1.02 "Oswald-Regular",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:#fff;letter-spacing:0}
-.site-boot-status{margin-top:1rem;color:rgba(255,255,255,.72);font-size:.96rem;letter-spacing:.04em}
-.site-boot-progress{position:relative;width:min(16rem,62vw);height:2px;margin-top:1.25rem;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.16)}
-.site-boot-progress span{position:absolute;inset:0;width:42%;border-radius:inherit;background:linear-gradient(90deg,transparent,#ff9a42,#67e8ff,transparent);animation:site-boot-progress 1.18s ease-in-out infinite}
-@keyframes site-boot-progress{0%{transform:translateX(-115%)}100%{transform:translateX(260%)}}
-.site-boot-loader-css::before{content:"";position:absolute;inset:-12%;background:repeating-radial-gradient(circle at 50% 50%,rgba(255,154,66,.95) 0,rgba(255,154,66,.95) 1px,rgba(103,232,255,.65) 2px,rgba(125,92,255,.35) 4px,transparent 8px,transparent 18px);filter:blur(.4px);animation:site-boot-rings 2.8s linear infinite}
-.site-boot-loader-css::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.14),transparent 28%,rgba(103,232,255,.15) 48%,transparent 72%,rgba(255,154,66,.12));mix-blend-mode:screen;animation:site-boot-sweep 2.6s ease-in-out infinite alternate}
-@keyframes site-boot-rings{0%{transform:scale(.94) rotate(0deg)}100%{transform:scale(1.08) rotate(18deg)}}
-@keyframes site-boot-sweep{0%{transform:translate3d(-4%,0,0)}100%{transform:translate3d(4%,0,0)}}
-@media (prefers-reduced-motion:reduce){.site-boot-loader{display:none}.site-boot-progress span,.site-boot-loader-css::before,.site-boot-loader-css::after{animation:none}}
+.site-boot-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;background:#000}
+@media (prefers-reduced-motion:reduce){.site-boot-loader{display:none}}
