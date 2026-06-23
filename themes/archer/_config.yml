@@ -223,9 +223,9 @@ math:
 boot_shader:
   enable: true
   session_once: true
-  min_duration: 1800
+  min_duration: 3200
   max_duration: 5200
-  fade_duration: 900
+  fade_duration: 450
 
 # ========== Experimental Options ========== #
 # NOTE: The options below are experimental options.
@@ -244,4 +244,4 @@ custom_font:
 # ========== Theme Dev ========== #
 # Ensure visitor to get the latest version of source.
 # Set a higher value before creating new release.
-source_version: 2026062404
+source_version: 2026062405

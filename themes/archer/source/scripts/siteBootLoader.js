@@ -4,9 +4,9 @@
 
     var forceBoot = /(?:\?|&)boot=1(?:&|$)/.test(window.location.search);
     var once = loader.getAttribute('data-session-once') !== 'false';
-    var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 1800;
+    var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
-    var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 900;
+    var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
     var storageKey = 'ggxd.siteBootLoader.seen.v5';
     var start = Date.now();
     var reducedMotion = false;
