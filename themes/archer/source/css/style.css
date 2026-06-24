@@ -52,9 +52,9 @@ html.site-boot-skip .site-boot-loader{display:none}
 html.site-boot-intro-hidden .home-body .intro-title,
 html.site-boot-intro-hidden .home-body .intro-subtitle{opacity:0!important;transform:translate3d(0,12px,0)!important;transition:none!important}
 html.site-boot-intro-visible .home-body .intro-title,
-html.site-boot-intro-visible .home-body .intro-subtitle{opacity:1!important;transform:none!important;transition:opacity 680ms ease,transform 680ms ease}
-html.site-boot-intro-visible .home-body .intro-title{transition-delay:80ms}
-html.site-boot-intro-visible .home-body .intro-subtitle{transition-delay:240ms}
+html.site-boot-intro-visible .home-body .intro-subtitle{opacity:1!important;transform:none!important;transition:opacity 420ms ease,transform 420ms ease}
+html.site-boot-intro-visible .home-body .intro-title{transition-delay:0ms}
+html.site-boot-intro-visible .home-body .intro-subtitle{transition-delay:90ms}
 @keyframes site-boot-canvas-in{0%{opacity:0;filter:brightness(.42)}100%{opacity:1;filter:brightness(1)}}
 @keyframes site-boot-name-in{0%{opacity:0;filter:blur(18px);transform:scale(.92)}55%{opacity:.96;filter:blur(2px);transform:scale(1.02)}100%{opacity:.92;filter:blur(0);transform:scale(1)}}
 @keyframes site-boot-name-sheen{0%{background-position:120% 50%}100%{background-position:0 50%}}

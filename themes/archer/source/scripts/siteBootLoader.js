@@ -7,7 +7,7 @@
     var minDuration = parseInt(loader.getAttribute('data-min-duration'), 10) || 3200;
     var maxDuration = parseInt(loader.getAttribute('data-max-duration'), 10) || 5200;
     var fadeDuration = parseInt(loader.getAttribute('data-fade-duration'), 10) || 450;
-    var storageKey = 'ggxd.siteBootLoader.seen.v13';
+    var storageKey = 'ggxd.siteBootLoader.seen.v14';
     var start = 0;
     var reducedMotion = false;
     var pageLoaded = document.readyState === 'complete';
@@ -25,10 +25,17 @@
     var rafId = 0;
     var running = true;
     var fading = false;
+    var introRevealed = false;
 
-    function finishLoader() {
+    function revealIntro() {
+        if (introRevealed) return;
+        introRevealed = true;
         document.documentElement.classList.remove('site-boot-intro-hidden');
         document.documentElement.classList.add('site-boot-intro-visible');
+    }
+
+    function finishLoader() {
+        revealIntro();
         if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
         loader = null;
     }
@@ -47,6 +54,7 @@
         markSeen();
         loader.style.setProperty('--site-boot-fade-duration', fadeDuration + 'ms');
         loader.classList.add('site-boot-loader-fading');
+        window.setTimeout(revealIntro, 120);
         window.setTimeout(finishLoader, fadeDuration + 80);
     }
 
