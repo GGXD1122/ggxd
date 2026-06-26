@@ -1,9 +1,9 @@
 <!-- title -->
 <% var title = "" %>
 <% if (page.title) { %>
-    <% title = page.title + ' · ' + theme.SEO_title || config.title %>
+    <% title = page.title + ' · ' + (theme.SEO_title || config.title) %>
 <% } else { %>
-    <% title = theme.SEO_title %>
+    <% title = theme.SEO_title || config.title %>
 <% } %>
 <!-- keywords -->
 <% var keywords = "" %>

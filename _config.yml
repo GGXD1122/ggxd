@@ -52,7 +52,7 @@ neat_js:
 baidu_url_submit:
   count: 200  #比如200，代表提交最新的200个链接
   host: gegexd.com # 与站点主域名保持一致
-  token: wcR5KHYlwf5FUire # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  token:  # 私有 token 放在本地 _config.local.yml，不提交远端
   path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里，这个默认
 
 # URL

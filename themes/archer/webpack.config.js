@@ -5,7 +5,7 @@ module.exports = {
     main: './src/js/main.js',
     share: './src/js/share.js',
     search: './src/js/search.js',
-    dark: './src/js/dark.js',
+    siteBootLoader: './src/js/siteBootLoader.js',
     customFontLoader: './src/js/customFontLoader.js',
   },
   output: {
@@ -17,7 +17,10 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          path.resolve(__dirname, 'src/js/siteBootLoader.js'),
+        ],
         use: {
           loader: 'babel-loader',
           options: {

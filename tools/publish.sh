@@ -6,6 +6,10 @@ cd "$ROOT"
 
 MESSAGE="${1:-}"
 BRANCH="$(git branch --show-current)"
+HEXO_CONFIG="_config.yml"
+if [[ -f "_config.local.yml" ]]; then
+  HEXO_CONFIG="${HEXO_CONFIG},_config.local.yml"
+fi
 
 finish() {
   "$ROOT/tools/cleanup.sh" >/dev/null || true
@@ -31,6 +35,6 @@ echo "==> Pushing source branch: $BRANCH"
 git push origin "$BRANCH"
 
 echo "==> Deploying generated site"
-./node_modules/.bin/hexo deploy
+./node_modules/.bin/hexo --config "$HEXO_CONFIG" deploy
 
 echo "==> Publish complete"

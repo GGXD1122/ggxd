@@ -1,0 +1,272 @@
+// Site-specific visual overrides. Keep this in sync with source/css/style.css.
+.site-intro-meta {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-title,
+.intro-subtitle {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32), 0 1px 2px rgba(0, 0, 0, 0.26);
+}
+
+.intro-subtitle:empty {
+  display: none;
+}
+
+.site-intro-img-sentinel {
+  display: none;
+}
+
+.site-intro-tags {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+}
+
+.site-intro-floating-tag {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.105);
+  color: rgba(255, 255, 255, 0.52);
+  font: 700 1.05rem/1.1 $feature-font-family;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.site-intro-floating-tag:nth-child(3n) {
+  color: rgba(247, 83, 87, 0.58);
+}
+
+.site-intro-img-lazy {
+  background-color: transparent;
+}
+
+.ai-post-badge {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.15rem;
+  height: 1.25rem;
+  padding: 0 0.45rem;
+  border: 1px solid rgba(247, 83, 87, 0.35);
+  border-radius: 999px;
+  background: rgba(247, 83, 87, 0.08);
+  color: $feature-color;
+  font: 700 0.72rem/1 $feature-font-family;
+  letter-spacing: 0;
+}
+
+.ai-post-badge::before {
+  content: "";
+  width: 0.38rem;
+  height: 0.38rem;
+  margin-right: 0.28rem;
+  border-radius: 50%;
+  background: $feature-color;
+  box-shadow: 0 0 0 0.18rem rgba(247, 83, 87, 0.13);
+}
+
+.index-post .abstract-title {
+  padding-right: 3.2rem;
+}
+
+.home-body,
+.about-body {
+  .site-intro-floating-tag:nth-child(1) {
+    --tag-x: 18% !important;
+    --tag-y: 18% !important;
+  }
+  .site-intro-floating-tag:nth-child(2) {
+    --tag-x: 33% !important;
+    --tag-y: 13% !important;
+  }
+  .site-intro-floating-tag:nth-child(3) {
+    --tag-x: 48% !important;
+    --tag-y: 16% !important;
+  }
+  .site-intro-floating-tag:nth-child(4) {
+    --tag-x: 67% !important;
+    --tag-y: 18% !important;
+  }
+  .site-intro-floating-tag:nth-child(5) {
+    --tag-x: 82% !important;
+    --tag-y: 22% !important;
+  }
+  .site-intro-floating-tag:nth-child(6) {
+    --tag-x: 14% !important;
+    --tag-y: 70% !important;
+  }
+  .site-intro-floating-tag:nth-child(7) {
+    --tag-x: 28% !important;
+    --tag-y: 82% !important;
+  }
+  .site-intro-floating-tag:nth-child(8) {
+    --tag-x: 72% !important;
+    --tag-y: 80% !important;
+  }
+  .site-intro-floating-tag:nth-child(9) {
+    --tag-x: 88% !important;
+    --tag-y: 70% !important;
+  }
+  .site-intro-floating-tag:nth-child(10) {
+    --tag-x: 10% !important;
+    --tag-y: 52% !important;
+  }
+  .site-intro-floating-tag:nth-child(11) {
+    --tag-x: 90% !important;
+    --tag-y: 50% !important;
+  }
+  .site-intro-floating-tag:nth-child(n+12) {
+    display: none;
+  }
+}
+
+.post-body {
+  .intro-title {
+    display: inline-block;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 3.35rem;
+    line-height: 1.16;
+    box-shadow: none;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.48), 0 1px 3px rgba(0, 0, 0, 0.42);
+  }
+
+  .post-intros {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.75rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42), 0 1px 2px rgba(0, 0, 0, 0.36);
+  }
+
+  .post-intro-tags,
+  .post-intro-tags a {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .post-intro-read,
+  .post-intro-meta {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .site-intro-floating-tag {
+    opacity: 0.34;
+  }
+  .site-intro-floating-tag:nth-child(1) {
+    --tag-x: 14% !important;
+    --tag-y: 16% !important;
+  }
+  .site-intro-floating-tag:nth-child(2) {
+    --tag-x: 86% !important;
+    --tag-y: 22% !important;
+  }
+  .site-intro-floating-tag:nth-child(3) {
+    --tag-x: 16% !important;
+    --tag-y: 82% !important;
+  }
+  .site-intro-floating-tag:nth-child(4) {
+    --tag-x: 84% !important;
+    --tag-y: 78% !important;
+  }
+  .site-intro-floating-tag:nth-child(n+5) {
+    display: none;
+  }
+}
+
+.software-download-panel {
+  box-sizing: border-box;
+  margin: 0.75rem 0 1.35rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.software-download-version {
+  margin: 0 0 0.65rem;
+  color: #777;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.software-download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+}
+
+.article-entry a.software-download-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.48rem;
+  box-sizing: border-box;
+  min-height: 2.25rem;
+  padding: 0 1.05rem !important;
+  border: 1px solid rgba(247, 83, 87, 0.58) !important;
+  border-radius: 999px !important;
+  background: $feature-color !important;
+  color: #fff !important;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1;
+  word-break: normal;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(247, 83, 87, 0.16);
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    background-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.article-entry a.software-download-btn:hover {
+  transform: translateY(-1px);
+  border-bottom: 1px solid rgba(247, 83, 87, 0.85) !important;
+  background: #ff686c !important;
+  color: #fff !important;
+  box-shadow: 0 10px 22px rgba(247, 83, 87, 0.22);
+}
+
+.article-entry a.software-download-btn i {
+  width: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.article-entry a.software-download-btn-secondary {
+  background: $feature-color !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(247, 83, 87, 0.16);
+}
+
+.article-entry a.software-download-btn-secondary:hover {
+  background: #ff686c !important;
+  color: #fff !important;
+}
+
+.software-download-note {
+  margin-top: 0.75rem;
+  color: #777;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.software-download-note code {
+  margin: 0 0.12rem;
+}

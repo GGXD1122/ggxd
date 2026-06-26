@@ -10,5 +10,6 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+_config.local.yml
 dji-june-poster/
 dji_care_a4_output/

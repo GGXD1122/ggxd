@@ -12,9 +12,14 @@ if git ls-files | rg -q '(^|/)\..*\.sw[op]$|\.sw[op]$'; then
   exit 1
 fi
 
+HEXO_CONFIG="_config.yml"
+if [[ -f "_config.local.yml" ]]; then
+  HEXO_CONFIG="${HEXO_CONFIG},_config.local.yml"
+fi
+
 echo "==> Building Hexo site"
-./node_modules/.bin/hexo clean
-./node_modules/.bin/hexo generate
+./node_modules/.bin/hexo --config "$HEXO_CONFIG" clean
+./node_modules/.bin/hexo --config "$HEXO_CONFIG" generate
 
 echo "==> Checking generated core files"
 test -f public/index.html
