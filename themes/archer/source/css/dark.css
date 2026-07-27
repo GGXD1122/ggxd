@@ -14,3 +14,5 @@
 .article-entry a.software-download-btn:hover{color:#fff!important;background:#ff686c!important;border-bottom-color:rgba(247,83,87,.86)!important}
 .article-entry a.software-download-btn-secondary{color:#fff!important;background:#f75357!important}
 .article-entry a.software-download-btn-secondary:hover{color:#fff!important;background:#ff686c!important}
+/* UOM guide dark mode. Keep in sync with src/scss/_dark/_partial/_post-page-dark.scss. */
+.article-entry.uom-guide h2{border-top-color:rgba(255,255,255,.11)}.article-entry.uom-guide blockquote{background:rgba(247,83,87,.09)}.uom-guide-meta,.uom-guide-route{border-top-color:rgba(255,255,255,.11);border-bottom-color:rgba(255,255,255,.11)}.uom-guide-meta span+span,.uom-guide-route>div+div{border-left-color:rgba(255,255,255,.09)}.uom-guide-meta strong,.uom-guide-route span{color:#e6e7e9}.uom-guide-meta,.uom-guide-figure figcaption{color:#aeb2b9}.article-entry.uom-guide .uom-guide-figure img{border-color:rgba(255,255,255,.12);background:#20242b;box-shadow:0 10px 28px rgba(0,0,0,.25)}

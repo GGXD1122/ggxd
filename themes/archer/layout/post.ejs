@@ -1,5 +1,5 @@
 <main class="main post-page">
-    <article class="article-entry">
+    <article class="article-entry<% if (page.article_class) { %> <%- page.article_class %><% } %>">
         <%- page.content %>
     </article>
     <!-- license -->

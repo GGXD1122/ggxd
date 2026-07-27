@@ -83,3 +83,28 @@
     color: $text-color-secondary-dark;
   }
 }
+
+.article-entry.uom-guide {
+  h2 {
+    border-top-color: rgba(255, 255, 255, 0.11);
+  }
+
+  blockquote {
+    background: rgba(247, 83, 87, 0.09);
+  }
+}
+
+.uom-guide-figure figcaption {
+  color: #aeb2b9;
+}
+
+.article-entry.uom-guide .uom-guide-figure img {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #20242b;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.article-entry.uom-guide .uom-guide-figure img[src$="/assets/loading.svg"] {
+  background: #1d2127;
+  box-shadow: none;
+}

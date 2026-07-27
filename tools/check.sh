@@ -27,6 +27,9 @@ test -f public/sitemap.xml
 test -f public/baidusitemap.xml
 test -f public/content.json
 
+echo "==> Testing article image placeholders"
+node tools/test-blur-up-images.js
+
 echo "==> Checking asset version"
 VERSION="$(awk -F': ' '/^source_version:/{print $2}' themes/archer/_config.yml | tr -d ' ')"
 if [[ -n "$VERSION" ]]; then

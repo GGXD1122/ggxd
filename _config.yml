@@ -18,6 +18,22 @@ lazyload:
   loadingImg: /assets/loading.svg # eg ./images/loading.gif
   preloadRatio: 3
 
+# 文章图片低清占位：构建时自动生成超小 WebP，并为远程图床图片保留本地缓存。
+blur_up_images:
+  enable: true
+  local: true
+  remote: true
+  cache_dir: .cache/hexo-image-placeholders
+  route_dir: assets/image-placeholders
+  placeholder_size: 24
+  placeholder_quality: 32
+  remote_cache_days: 7
+  remote_timeout_ms: 10000
+  remote_max_bytes: 15728640
+  portrait_ratio: 1.45
+  tall_ratio: 2
+  min_dimension: 64
+
 # 站点地图
 sitemap:
   path: sitemap.xml

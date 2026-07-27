@@ -162,3 +162,49 @@
 .software-download-note {
   font-size: 0.84rem;
 }
+
+.article-entry.uom-guide {
+  padding: 0.85rem 1rem 1.2rem;
+
+  > p:first-of-type {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+
+  h2 {
+    margin-top: 2.55rem;
+    padding-top: 1.1rem;
+    font-size: 1.48rem;
+  }
+
+  h2:first-of-type {
+    margin-top: 1.4rem;
+  }
+
+  h3 {
+    margin-top: 1.7rem;
+    font-size: 1.18rem;
+  }
+}
+
+.uom-guide-figure-grid {
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+}
+
+.uom-guide-figure,
+.uom-guide-figure--wide,
+.uom-guide-figure--compact,
+.uom-guide-figure--portrait,
+.uom-guide-figure--mini,
+.uom-guide-figure--panel,
+.uom-guide-figure--panel-tall {
+  width: 100%;
+}
+
+.uom-guide-figure--portrait img,
+.uom-guide-figure--mini img {
+  max-width: 22rem;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
