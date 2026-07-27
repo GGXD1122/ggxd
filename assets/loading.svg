@@ -1,56 +1,6 @@
-<svg width="105" height="105" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" fill="#ccc">
-    <circle cx="12.5" cy="12.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="0s" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5">
-        <animate attributeName="fill-opacity"
-         begin="50ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="52.5" cy="12.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="150ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="52.5" cy="52.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="300ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="92.5" cy="12.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="400ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="92.5" cy="52.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="200ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="12.5" cy="92.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="350ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="52.5" cy="92.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="250ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
-    <circle cx="92.5" cy="92.5" r="12.5">
-        <animate attributeName="fill-opacity"
-         begin="100ms" dur="500ms"
-         values="1;.2;1" calcMode="linear"
-         repeatCount="indefinite" />
-    </circle>
+<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="14" cy="14" r="10" fill="none" stroke="#d8dde5" stroke-width="3" />
+  <path d="M14 4a10 10 0 0 1 10 10" fill="none" stroke="#f75357" stroke-linecap="round" stroke-width="3">
+    <animateTransform attributeName="transform" type="rotate" from="0 14 14" to="360 14 14" dur="0.8s" repeatCount="indefinite" />
+  </path>
 </svg>
