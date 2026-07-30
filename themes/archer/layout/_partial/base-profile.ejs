@@ -1,5 +1,5 @@
 <div class="profile<%- theme.profile_sticky ? ' profile-sticky' : '' %>">
-    <img class="profile-avatar<%- theme.avatar_border ? '' : ' hide-border' %>" alt="avatar" src="<%- url_for(theme.avatar) %>" loading="lazy" decoding="async" />
+    <img class="profile-avatar blur-up-image<%- theme.avatar_border ? '' : ' hide-border' %>" alt="avatar" src="<%- url_for(theme.avatar) %>" width="384" height="384" loading="lazy" decoding="async" no-lazy data-blur-up="profile" style="--blur-up-aspect:1 / 1;--blur-up-placeholder:url('<%- url_for('assets/avatar-blur.webp') %>?v=<%- theme.source_version %>');" />
     <div class="profile-name"><%- theme.author || config.author %></div>
     <% if(theme.signature && theme.signature.length !== 0) { %>
         <div class="profile-signature">

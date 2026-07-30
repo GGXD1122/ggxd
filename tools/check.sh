@@ -36,4 +36,32 @@ if [[ -n "$VERSION" ]]; then
   rg -q "style\\.css\\?v=$VERSION" public/index.html
 fi
 
+echo "==> Checking frontend performance safeguards"
+test -f public/assets/avatar-blur.webp
+test -f public/font/iconfont-archer.woff
+rg -q 'profile-avatar blur-up-image' public/index.html
+rg -q 'assets/avatar-blur\.webp' public/index.html
+rg -q "scripts/imageReveal\.js\?v=$VERSION" public/index.html
+if rg -q 'cdn\.jsdelivr\.net/npm/(jquery|@fancyapps/fancybox)|at\.alicdn\.com' public/index.html; then
+  echo "Critical frontend resources still depend on an external CDN."
+  exit 1
+fi
+if find public -type f -name '*.map' | rg -q .; then
+  echo "Production source maps must not be published."
+  find public -type f -name '*.map'
+  exit 1
+fi
+node --check public/lib/jquery.min.js
+node --check public/lib/fancybox/source/jquery.fancybox.min.js
+node --check public/scripts/main.js
+node --check public/scripts/imageReveal.js
+MAIN_JS_BYTES="$(wc -c < public/scripts/main.js | tr -d ' ')"
+if (( MAIN_JS_BYTES > 300000 )); then
+  echo "main.js exceeds the 300 KB production budget: ${MAIN_JS_BYTES} bytes"
+  exit 1
+fi
+for icon in apple bolt download github globe windows; do
+  test -f "public/assets/ui-icons/${icon}.svg"
+done
+
 echo "==> Check complete"

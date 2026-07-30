@@ -249,6 +249,40 @@
   flex: 0 0 auto;
 }
 
+.software-action-icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask: var(--software-icon) center / contain no-repeat;
+  mask: var(--software-icon) center / contain no-repeat;
+}
+
+.software-action-icon--bolt {
+  --software-icon: url('/assets/ui-icons/bolt.svg');
+}
+
+.software-action-icon--download {
+  --software-icon: url('/assets/ui-icons/download.svg');
+}
+
+.software-action-icon--globe {
+  --software-icon: url('/assets/ui-icons/globe.svg');
+}
+
+.software-action-icon--github {
+  --software-icon: url('/assets/ui-icons/github.svg');
+}
+
+.software-action-icon--windows {
+  --software-icon: url('/assets/ui-icons/windows.svg');
+}
+
+.software-action-icon--apple {
+  --software-icon: url('/assets/ui-icons/apple.svg');
+}
+
 .article-entry a.software-download-btn-secondary {
   background: $feature-color !important;
   color: #fff !important;

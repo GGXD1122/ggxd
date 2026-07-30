@@ -26,10 +26,35 @@
   display: block;
   border-radius: 1rem;
   width: 100%;
+  height: auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   &.hide-border {
     border: unset;
+  }
+}
+
+.profile-avatar.blur-up-image {
+  aspect-ratio: var(--blur-up-aspect);
+  background: #f3f5f8 var(--blur-up-placeholder) center / cover no-repeat;
+  filter: blur(16px) saturate(0.72);
+  opacity: 0.78;
+  transform: scale(1.025);
+  transition: filter 0.5s ease, opacity 0.42s ease, transform 0.5s ease;
+  will-change: filter, opacity, transform;
+}
+
+.profile-avatar.blur-up-image.is-loaded {
+  background-image: none;
+  filter: none;
+  opacity: 1;
+  transform: scale(1);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-avatar.blur-up-image {
+    transition: none;
   }
 }
 

@@ -54,12 +54,15 @@ neat_css:
     - '**/*.min.css'
 # 压缩js
 neat_js:
-  enable: true
+  # Theme bundles and vendored libraries are already minified. The legacy
+  # optimizer can corrupt modern third-party scripts when no route is supplied.
+  enable: false
   mangle: true
   output:
   compress:
   exclude:
     - '**/*.min.js'
+    - '**/jquery.fancybox.min.js'
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'
     - '**/fireworks.js'
