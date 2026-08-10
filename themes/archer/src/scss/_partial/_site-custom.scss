@@ -72,6 +72,59 @@
   padding-right: 3.2rem;
 }
 
+.index-post {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 13rem;
+  overflow: hidden;
+
+  .abstract-title {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .abstract-title-text {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .abstract-content {
+    display: -webkit-box;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    line-height: 1.65;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .abstract-content > :first-child {
+    margin-top: 0;
+  }
+
+  .abstract-content > :last-child {
+    margin-bottom: 0;
+  }
+
+  .abstract-post-meta {
+    flex: 0 0 auto;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+
+  .abstract-date {
+    flex: 0 0 auto;
+  }
+
+  .abstract-tags {
+    max-height: 3rem;
+    overflow: hidden;
+  }
+}
+
 .home-body,
 .about-body {
   .site-intro-floating-tag:nth-child(1) {

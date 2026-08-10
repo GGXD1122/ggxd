@@ -55,6 +55,18 @@
   }
 }
 
+.index-post {
+  height: 18.5rem;
+
+  .abstract-title-text {
+    -webkit-line-clamp: 3;
+  }
+
+  .abstract-content {
+    -webkit-line-clamp: 3;
+  }
+}
+
 .about-body .intro-subtitle {
   display: none;
 }
