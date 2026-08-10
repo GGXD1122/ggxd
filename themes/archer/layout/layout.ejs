@@ -13,6 +13,7 @@
     <% } else { %>
         <body class="page-body">
     <% } %>
+        <%- partial('_partial/site-boot-loader') %>
         <!-- header -->
         <%- partial('_partial/base-header') %>
         <!-- fixed footer -->
@@ -47,6 +48,7 @@
         <!-- import experimental options here -->
         <%- partial('_partial/custom-font', {}, {cache: true}) %>
         <!-- main func -->
+        <script src="<%- url_for('scripts/siteBootLoader.js') %>?v=<%- theme.source_version %>"></script>
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <script src="<%- url_for('scripts/imageReveal.js') %>?v=<%- theme.source_version %>" defer></script>
         <!-- fancybox -->

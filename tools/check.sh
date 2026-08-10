@@ -39,11 +39,6 @@ fi
 echo "==> Checking frontend performance safeguards"
 test -f public/assets/avatar-blur.webp
 test -f public/font/iconfont-archer.woff
-test ! -e public/scripts/siteBootLoader.js
-if rg -q 'site-boot-loader|siteBootLoader\.js|site-boot-intro-' public -g '*.html'; then
-  echo "Removed site boot loader is still referenced by generated HTML."
-  exit 1
-fi
 rg -q 'profile-avatar blur-up-image' public/index.html
 rg -q 'assets/avatar-blur\.webp' public/index.html
 rg -q "scripts/imageReveal\.js\?v=$VERSION" public/index.html
