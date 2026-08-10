@@ -483,3 +483,34 @@
   width: 100%;
   margin: 0;
 }
+
+.article-entry.boxplayer-guide .boxplayer-workspace-figure {
+  width: 100%;
+  margin: 1.75rem 0 2rem;
+}
+
+.article-entry.boxplayer-guide .boxplayer-workspace-figure .fancy-link {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+
+.article-entry.boxplayer-guide .boxplayer-workspace-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid rgba(34, 42, 54, 0.1);
+  border-radius: 0.4rem;
+  background: #f7f9fc;
+  box-shadow: 0 10px 28px rgba(34, 42, 54, 0.1);
+}
+
+.article-entry.boxplayer-guide .boxplayer-workspace-figure figcaption {
+  margin-top: 0.62rem;
+  color: #7c828c;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: center;
+}
