@@ -65,25 +65,6 @@ function appendStyle(style, name, value) {
   return `${withoutExisting.join(';')};`;
 }
 
-function previewNameFromStyle(style, routeDir) {
-  const declaration = String(style || '')
-    .split(';')
-    .map(part => part.trim())
-    .find(part => part.startsWith('--blur-up-placeholder:'));
-  if (!declaration) return null;
-
-  const match = declaration.match(/url\(\s*(['"]?)(.*?)\1\s*\)/i);
-  if (!match) return null;
-
-  const pathname = normalizeRoute(match[2].split('#')[0].split('?')[0]);
-  const prefix = `${routeDir}/`;
-  const prefixIndex = pathname.lastIndexOf(prefix);
-  if (prefixIndex < 0) return null;
-
-  const previewName = pathname.slice(prefixIndex + prefix.length);
-  return /^[a-f0-9]{24}\.webp$/i.test(previewName) ? previewName : null;
-}
-
 function resolveLocalPath(sourceDir, postSource, src) {
   let pathname;
   try {
@@ -462,35 +443,7 @@ function createProcessor(hexoInstance, overrides = {}) {
     }
   }
 
-  async function restoreReferencedRoutes() {
-    if (!hexoInstance.locals || typeof hexoInstance.locals.get !== 'function') return;
-    const postsQuery = hexoInstance.locals.get('posts');
-    const posts = postsQuery && typeof postsQuery.toArray === 'function' ? postsQuery.toArray() : [];
-    const previewNames = new Set();
-
-    posts.forEach(post => {
-      [post.content, post.excerpt, post.more].filter(Boolean).forEach(html => {
-        const $ = cheerio.load(`<div>${html}</div>`, { decodeEntities: false });
-        $('img.blur-up-image[style]').each((index, element) => {
-          const previewName = previewNameFromStyle($(element).attr('style'), routeDir);
-          if (previewName) previewNames.add(previewName);
-        });
-      });
-    });
-
-    await Promise.all([...previewNames].map(async previewName => {
-      const route = `${routeDir}/${previewName}`;
-      if (routeFiles.has(route)) return;
-      try {
-        routeFiles.set(route, await fs.promises.readFile(path.join(cacheDir, previewName)));
-      } catch (error) {
-        warnOnce(route, new Error('cached preview was not found'));
-      }
-    }));
-  }
-
-  async function generateRoutes() {
-    await restoreReferencedRoutes();
+  function generateRoutes() {
     return [...routeFiles.entries()].map(([route, data]) => ({ path: route, data }));
   }
 

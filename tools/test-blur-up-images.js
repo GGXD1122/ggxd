@@ -12,7 +12,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SOURCE_DIR = path.join(ROOT, 'source');
 const TEST_IMAGE = path.join(SOURCE_DIR, 'assets/uom-auto-printer/auto-print.webp');
 
-function createHexo(cacheDir, overrides = {}, posts = []) {
+function createHexo(cacheDir, overrides = {}) {
   const warnings = [];
   return {
     base_dir: ROOT,
@@ -28,11 +28,6 @@ function createHexo(cacheDir, overrides = {}, posts = []) {
     log: {
       info() {},
       warn(...args) { warnings.push(args); }
-    },
-    locals: {
-      get(name) {
-        return name === 'posts' ? { toArray: () => posts } : null;
-      }
     },
     warnings
   };
@@ -79,16 +74,10 @@ async function testLocalImage(cacheDir) {
   assert.strictEqual(image.attr('data-blur-up'), 'local');
   assert.notStrictEqual(image.attr('no-lazy'), undefined, 'legacy lazy loader was not bypassed');
 
-  const routes = await processor.generateRoutes();
+  const routes = processor.generateRoutes();
   assert.strictEqual(routes.length, 1, 'local preview route was not generated');
   assert(routes[0].data.length > 0 && routes[0].data.length < 2048, 'local preview size is unreasonable');
   assert.strictEqual(routePathFromStyle(image.attr('style')), routes[0].path);
-
-  const incrementalHexo = createHexo(cacheDir, {}, [{ content: html }]);
-  const incrementalProcessor = createProcessor(incrementalHexo);
-  const incrementalRoutes = await incrementalProcessor.generateRoutes();
-  assert.strictEqual(incrementalRoutes.length, 1, 'incremental build did not restore the cached preview route');
-  assert.strictEqual(incrementalRoutes[0].path, routes[0].path);
 }
 
 async function testRemoteImage(cacheDir) {
@@ -117,7 +106,7 @@ async function testRemoteImage(cacheDir) {
   const firstImage = inspectSingleImage(firstHtml);
   assert.strictEqual(firstImage.attr('data-blur-up'), 'remote');
   assert(firstImage.hasClass('blur-up-image--tall'));
-  assert.strictEqual((await firstProcessor.generateRoutes()).length, 1);
+  assert.strictEqual(firstProcessor.generateRoutes().length, 1);
   assert.strictEqual(requests, 2, 'redirect and image requests were not both completed');
 
   const cachedHexo = createHexo(cacheDir);
@@ -134,7 +123,7 @@ async function testRemoteImage(cacheDir) {
   const staleImage = inspectSingleImage(staleHtml);
   assert.strictEqual(staleImage.attr('data-blur-up'), 'remote');
   assert.strictEqual(staleProcessor.stats.staleFallbacks, 1, 'stale remote preview was not reused');
-  assert.strictEqual((await staleProcessor.generateRoutes()).length, 1);
+  assert.strictEqual(staleProcessor.generateRoutes().length, 1);
 }
 
 function verifyGeneratedSite() {
