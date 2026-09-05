@@ -65,6 +65,25 @@ function appendStyle(style, name, value) {
   return `${withoutExisting.join(';')};`;
 }
 
+function previewNameFromStyle(style, routeDir) {
+  const declaration = String(style || '')
+    .split(';')
+    .map(part => part.trim())
+    .find(part => part.startsWith('--blur-up-placeholder:'));
+  if (!declaration) return null;
+
+  const match = declaration.match(/url\(\s*(['"]?)(.*?)\1\s*\)/i);
+  if (!match) return null;
+
+  const pathname = normalizeRoute(match[2].split('#')[0].split('?')[0]);
+  const prefix = `${routeDir}/`;
+  const prefixIndex = pathname.lastIndexOf(prefix);
+  if (prefixIndex < 0) return null;
+
+  const previewName = pathname.slice(prefixIndex + prefix.length);
+  return /^[a-f0-9]{24}\.webp$/i.test(previewName) ? previewName : null;
+}
+
 function resolveLocalPath(sourceDir, postSource, src) {
   let pathname;
   try {
@@ -346,9 +365,10 @@ function createProcessor(hexoInstance, overrides = {}) {
 
   async function transformImage($, element, post) {
     const image = $(element);
-    const src = String(image.attr('src') || '').trim();
+    const originalSrc = String(image.attr('data-original') || image.attr('src') || '').trim();
+    const src = originalSrc;
 
-    if (isSkippedSource(src) || image.attr('data-no-blur-up') !== undefined || image.hasClass('no-blur-up')) {
+    if (isSkippedSource(src) || image.attr('data-no-blur-up') !== undefined || image.hasClass('no-blur-up') || image.attr('data-blur-up') === 'profile') {
       stats.skipped += 1;
       return;
     }
@@ -385,8 +405,11 @@ function createProcessor(hexoInstance, overrides = {}) {
       image.attr('height', String(result.height));
       image.attr('loading', image.attr('loading') || 'lazy');
       image.attr('decoding', image.attr('decoding') || 'async');
+      // Keep the legacy lazy-loader from replacing the placeholder with its spinner.
       image.attr('no-lazy', '');
       image.attr('data-blur-up', remote ? 'remote' : 'local');
+      image.attr('src', placeholderUrl);
+      image.attr('data-original', originalSrc);
       const styleWithAspect = appendStyle(
         image.attr('style'),
         '--blur-up-aspect',
@@ -420,6 +443,16 @@ function createProcessor(hexoInstance, overrides = {}) {
 
   async function processPost(data) {
     if (!config.enable || data.blur_up_images === false) return data;
+    if (!data.photos || (Array.isArray(data.photos) && data.photos.length === 0)) {
+      const photoSources = new Set();
+      const sourceHtml = [data.content, data.excerpt, data.more].filter(Boolean).join('\n');
+      const sourceDocument = cheerio.load(`<div>${sourceHtml}</div>`, { decodeEntities: false });
+      sourceDocument('img').each((index, element) => {
+        const source = String(sourceDocument(element).attr('data-original') || sourceDocument(element).attr('src') || '').trim();
+        if (!isSkippedSource(source)) photoSources.add(source);
+      });
+      if (photoSources.size > 0) data.photos = [...photoSources];
+    }
     data.content = await processHtml(data.content, data);
     if (data.excerpt) data.excerpt = await processHtml(data.excerpt, data);
     if (data.more) data.more = await processHtml(data.more, data);
@@ -443,7 +476,35 @@ function createProcessor(hexoInstance, overrides = {}) {
     }
   }
 
-  function generateRoutes() {
+  async function restoreReferencedRoutes() {
+    if (!hexoInstance.locals || typeof hexoInstance.locals.get !== 'function') return;
+    const postsQuery = hexoInstance.locals.get('posts');
+    const posts = postsQuery && typeof postsQuery.toArray === 'function' ? postsQuery.toArray() : [];
+    const previewNames = new Set();
+
+    posts.forEach(post => {
+      [post.content, post.excerpt, post.more].filter(Boolean).forEach(html => {
+        const $ = cheerio.load(`<div>${html}</div>`, { decodeEntities: false });
+        $('img.blur-up-image[style]').each((index, element) => {
+          const previewName = previewNameFromStyle($(element).attr('style'), routeDir);
+          if (previewName) previewNames.add(previewName);
+        });
+      });
+    });
+
+    await Promise.all([...previewNames].map(async previewName => {
+      const route = `${routeDir}/${previewName}`;
+      if (routeFiles.has(route)) return;
+      try {
+        routeFiles.set(route, await fs.promises.readFile(path.join(cacheDir, previewName)));
+      } catch (error) {
+        warnOnce(route, new Error('cached preview was not found'));
+      }
+    }));
+  }
+
+  async function generateRoutes() {
+    await restoreReferencedRoutes();
     return [...routeFiles.entries()].map(([route, data]) => ({ path: route, data }));
   }
 

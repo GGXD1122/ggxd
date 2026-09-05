@@ -1,6 +1,6 @@
 const fancyBoxInit = (img) => {
   const outer = img.outerHTML
-  const imgSrc = img.getAttribute('src') || img.getAttribute('data-original')
+  const imgSrc = img.getAttribute('data-original') || img.getAttribute('src')
   const imgAlt = img.getAttribute('alt') || img.getAttribute('title') || ''
   if (!imgSrc) return
   img.outerHTML =

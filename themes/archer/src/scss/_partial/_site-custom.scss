@@ -407,31 +407,75 @@
   box-shadow: none;
 }
 
-.article-entry .blur-up-image {
-  aspect-ratio: var(--blur-up-aspect);
-  background-color: #f3f5f8;
-  background-image: var(--blur-up-placeholder) !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  clip-path: inset(0 round 0.4rem);
-  filter: blur(18px) saturate(0.68);
-  opacity: 0.76;
-  transform: scale(1.03);
-  transition: filter 0.55s ease, opacity 0.45s ease, transform 0.55s ease;
-  will-change: filter, opacity, transform;
+.article-entry .image-load-frame {
+  position: relative;
+  display: table;
+  max-width: 100%;
+  min-height: 4rem;
+  margin: 1rem auto;
+  overflow: hidden;
+  background: #f3f5f8;
 }
 
-.article-entry .blur-up-image.is-loaded {
-  background-image: none !important;
+.article-entry .image-load-frame > .blur-up-image {
+  display: block;
+  aspect-ratio: var(--blur-up-aspect);
+  margin: 0;
+  background: transparent !important;
   filter: none;
   opacity: 1;
-  transform: scale(1);
+  transform: none;
+  transition: opacity 0.24s ease;
+  will-change: opacity;
+}
+
+.image-loader-ready .article-entry .image-load-frame > .blur-up-image {
+  opacity: 0;
+}
+
+.image-loader-ready .article-entry .image-load-frame.is-loaded > .blur-up-image {
+  opacity: 1;
   will-change: auto;
 }
 
-.article-entry .blur-up-image.is-error {
-  color: transparent;
+.article-entry .image-load-progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: clamp(3.5rem, 20%, 9rem);
+  height: 0.2rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(35, 57, 77, 0.14);
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.article-entry .image-load-progress::after {
+  content: '';
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: #f75357;
+  animation: image-load-progress 1.15s ease-in-out infinite;
+}
+
+.article-entry .image-load-frame.is-loaded .image-load-progress,
+.article-entry .image-load-frame.is-error .image-load-progress {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.article-entry .image-load-frame.is-error {
+  background: rgba(247, 83, 87, 0.08);
+}
+
+@keyframes image-load-progress {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(340%); }
 }
 
 .article-entry img.blur-up-image--tall {
@@ -444,7 +488,7 @@
   object-fit: contain;
 }
 
-.article-entry .fancy-link:has(> img.blur-up-image--tall) {
+.article-entry .fancy-link:has(> .image-load-frame > img.blur-up-image--tall) {
   width: fit-content;
   max-width: 100%;
   margin-right: auto;
@@ -457,9 +501,16 @@
   border-radius: 0.4rem;
 }
 
+.article-entry.uom-guide .uom-guide-figure .image-load-frame {
+  width: 100%;
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .article-entry .blur-up-image {
+  .article-entry .blur-up-image,
+  .article-entry .image-load-progress::after {
     transition: none;
+    animation: none;
   }
 }
 
