@@ -37,6 +37,11 @@ if [[ -n "$VERSION" ]]; then
 fi
 
 echo "==> Checking frontend performance safeguards"
+test ! -e public/scripts/siteBootLoader.js
+if rg -l 'site-boot-loader|siteBootLoader|site-boot-intro-' public -g '*.html' -g '*.css' -g '*.js'; then
+  echo "Removed site boot animation is present in generated assets."
+  exit 1
+fi
 test -f public/assets/avatar-blur.webp
 test -f public/font/iconfont-archer.woff
 rg -q 'profile-avatar blur-up-image' public/index.html

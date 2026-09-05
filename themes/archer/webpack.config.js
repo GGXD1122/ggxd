@@ -5,7 +5,6 @@ module.exports = {
     main: './src/js/main.js',
     share: './src/js/share.js',
     search: './src/js/search.js',
-    siteBootLoader: './src/js/siteBootLoader.js',
     imageReveal: './src/js/imageReveal.js',
     customFontLoader: './src/js/customFontLoader.js',
   },
@@ -20,7 +19,6 @@ module.exports = {
         test: /\.m?js$/,
         exclude: [
           /node_modules/,
-          path.resolve(__dirname, 'src/js/siteBootLoader.js'),
           path.resolve(__dirname, 'src/js/imageReveal.js'),
         ],
         use: {
