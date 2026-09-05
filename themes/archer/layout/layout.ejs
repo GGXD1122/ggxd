@@ -21,7 +21,13 @@
         <div class="wrapper">
             <%- partial('_partial/base-background-image') %>
             <%- partial('_partial/script/font-loader') %>
-            <img class="loading loading-avatar" src="<%- url_for('assets/loading-avatar.jpg') %>" alt="loading" style="display: block; margin: 6rem auto 0 auto; width: 5.25rem; height: 5.25rem; border-radius: 1.1rem; object-fit: cover; box-shadow: 0 12px 32px rgba(35, 57, 77, 0.16);" />
+            <div class="loading loading-screen" role="status" aria-live="polite">
+                <img class="loading-avatar" src="<%- url_for('assets/loading-avatar.jpg') %>" alt="loading" width="128" height="128" loading="eager" fetchpriority="high" no-lazy />
+                <div class="loading-progress" aria-hidden="true">
+                    <span class="loading-progress-bar"></span>
+                </div>
+                <span class="loading-percent">0%</span>
+            </div>
             <div class="container container-unloaded">
                 <%- body %>
                 <!-- profile -->

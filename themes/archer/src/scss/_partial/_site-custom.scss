@@ -1,4 +1,50 @@
 // Site-specific visual overrides. Keep this in sync with source/css/style.css.
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 6rem;
+  color: $feature-color;
+}
+
+.loading-screen .loading-avatar {
+  display: block;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 1.1rem;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(35, 57, 77, 0.16);
+}
+
+.loading-progress {
+  width: clamp(4rem, 24vw, 9rem);
+  height: 0.2rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(35, 57, 77, 0.14);
+}
+
+.loading-progress-bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: $feature-color;
+  transition: width 0.18s ease-out;
+}
+
+.loading-percent {
+  display: block;
+  min-width: 3ch;
+  margin-top: 0.5rem;
+  color: rgba(35, 57, 77, 0.62);
+  font-size: 0.72rem;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
 .site-intro-meta {
   position: relative;
   z-index: 1;

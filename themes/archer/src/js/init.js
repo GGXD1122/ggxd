@@ -3,6 +3,38 @@ import toc from './toc'
 import archerUtil from './util'
 
 const init = function () {
+  const loadingScreen = document.querySelector('.loading-screen')
+  const loadingBar = loadingScreen && loadingScreen.querySelector('.loading-progress-bar')
+  const loadingPercent = loadingScreen && loadingScreen.querySelector('.loading-percent')
+  let loadingProgress = 0
+  let progressTimer = null
+  let loadingFinished = false
+
+  const setLoadingProgress = (nextProgress) => {
+    if (!loadingScreen || loadingFinished) return
+    loadingProgress = Math.max(loadingProgress, Math.min(100, Math.round(nextProgress)))
+    if (loadingBar) loadingBar.style.width = `${loadingProgress}%`
+    if (loadingPercent) loadingPercent.textContent = `${loadingProgress}%`
+  }
+
+  const finishLoading = () => {
+    if (!loadingScreen || loadingFinished) return
+    loadingFinished = true
+    if (progressTimer) window.clearInterval(progressTimer)
+    if (loadingBar) loadingBar.style.width = '100%'
+    if (loadingPercent) loadingPercent.textContent = '100%'
+    window.requestAnimationFrame(() => loadingScreen.remove())
+  }
+
+  if (loadingScreen) {
+    setLoadingProgress(4)
+    progressTimer = window.setInterval(() => {
+      if (loadingProgress < 86) {
+        setLoadingProgress(loadingProgress + Math.max(1, (86 - loadingProgress) * 0.08))
+      }
+    }, 80)
+  }
+
   // Remove site intro image placeholder
   const $introImg = $('.site-intro-img:first'),
     $introPlaceholder = $('.site-intro-placeholder:first'),
@@ -26,12 +58,10 @@ const init = function () {
   }
 
   // Dom content loaded event
-  document.addEventListener(
-    'DOMContentLoaded',
-    function () {
+  const revealContent = function () {
       $('.container').removeClass('container-unloaded')
       $('.footer').removeClass('footer-unloaded')
-      $('.loading').remove()
+      setLoadingProgress(72)
 
       // Jump to url hash location if exit
       const currentHash = window.location.hash
@@ -51,9 +81,14 @@ const init = function () {
       // after remove container's `container-unloaded` class,
       // so we should init toc here for better performance.
       toc()
-    },
-    false
-  )
+      finishLoading()
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', revealContent, { once: true })
+  } else {
+    revealContent()
+  }
 }
 
 export default init
