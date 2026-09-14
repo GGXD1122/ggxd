@@ -33,6 +33,28 @@ main{grid-area:main;min-height:0;width:100%;max-width:1550px;margin:0 auto;paddi
  .area-pins button>span{font-size:10px;line-height:1.2}
  .area-pins small{font-size:7px;line-height:1.15}
 }
+/* Area list on the left, selected notes on the right. */
+.area-details{grid-template-columns:minmax(0,2fr) minmax(0,3fr);grid-template-rows:minmax(0,1fr)}
+.pin-section,.description{min-width:0}
+.area-pins{grid-template-columns:repeat(2,minmax(0,1fr));align-content:start}
+.description{border-top:0;border-left:1px solid #e5e9de;align-content:start}
+#area-contents{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){
+ .area-details{grid-template-columns:minmax(0,43fr) minmax(0,57fr);grid-template-rows:minmax(0,1fr)}
+ .pin-section{padding:7px 6px}
+ .area-pins{grid-template-columns:minmax(0,1fr);grid-auto-rows:30px;padding-right:2px}
+ .description{padding:8px 9px;gap:7px}
+ .selection{align-items:flex-start;gap:5px}
+ .selection h3{font-size:11px;overflow-wrap:anywhere}
+ #selected-icon svg{width:17px;height:17px}
+ .note-label{display:none}
+ #area-contents{grid-template-columns:minmax(0,1fr);font-size:11px;gap:5px;line-height:1.65}
+ #area-contents li{padding-left:9px}
+}
+/* Fades indicate additional content only in the available scroll direction. */
+#area-pins,#area-contents{--fade-start:0px;--fade-end:0px;mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fade-start),#000 calc(100% - var(--fade-end)),transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 var(--fade-start),#000 calc(100% - var(--fade-end)),transparent 100%)}
+#area-pins.fade-top,#area-contents.fade-top{--fade-start:14px}
+#area-pins.fade-bottom,#area-contents.fade-bottom{--fade-end:18px}
 </style>
 </head>
 <body>
@@ -58,6 +80,12 @@ const $=s=>document.querySelector(s),all=s=>Array.from(document.querySelectorAll
 const mobile=matchMedia('(max-width:700px)');
 let current='overview',selected='A01',zoom=1,base=[],vb=[],drag=null,moved=false,pinch=null,resizeFrame;
 const pointers=new Map();
+function scrollHint(el){
+ el.classList.toggle('fade-top',el.scrollTop>2);
+ el.classList.toggle('fade-bottom',el.scrollHeight-el.clientHeight-el.scrollTop>2);
+}
+const scrollLists=[$('#area-pins'),$('#area-contents')];
+scrollLists.forEach(el=>{el.addEventListener('scroll',()=>scrollHint(el),{passive:true});new ResizeObserver(()=>scrollHint(el)).observe(el);});
 function select(id){
  const o=MAP.items[id];if(!o)return;selected=id;
  $('#selected-name').textContent=o.id+' · '+o.name;$('#selected-icon').innerHTML=o.icon;
@@ -73,6 +101,7 @@ function select(id){
   for(const [color,width] of [['#fff',6],['#eb9f23',3]]){const ring=shape.cloneNode(false);ring.removeAttribute('class');ring.removeAttribute('id');ring.style.cssText='fill:none;fill-opacity:0;stroke:'+color+';stroke-width:'+width+'px;vector-effect:non-scaling-stroke;';group.append(ring);}
   a.append(group);
  });
+ requestAnimationFrame(()=>scrollLists.forEach(scrollHint));
 }
 function selectPin(id){
  if(current==='overview' && !canvas.querySelector('a[data-id="'+id+'"]')){view('outdoor',id);return;}
