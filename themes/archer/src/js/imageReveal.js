@@ -12,6 +12,11 @@
     var frame = document.createElement('span')
     var progress = document.createElement('span')
     frame.className = 'image-load-frame'
+    // Resolve authored widths against the article, not the tiny preview image.
+    if (image.style.width && image.style.width !== 'auto') {
+      frame.style.width = image.style.width
+      image.style.width = '100%'
+    }
     progress.className = 'image-load-progress'
     progress.setAttribute('aria-hidden', 'true')
     image.parentNode.insertBefore(frame, image)
