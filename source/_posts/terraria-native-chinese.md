@@ -13,7 +13,7 @@ updated: 2026-09-20 14:00:00
 ai: true
 ---
 
-<p style="margin:0 0 0.6rem;text-align:left;font-size:28px;font-weight:800;line-height:1.4;letter-spacing:0">Terraria 手机版中文修正版</p>
+<p style="margin:0 0 0.6rem;text-align:left;font-size:28px;font-weight:800;line-height:1.4;letter-spacing:0;text-wrap:balance">Terraria 手机版中文修正版</p>
 
 <img src="/assets/terraria-native-chinese/r12-main-menu.webp" alt="手机首次启动后的中文主菜单" width="1920" height="864" style="width:100%;height:auto">
 
