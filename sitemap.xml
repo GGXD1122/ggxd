@@ -201,27 +201,6 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/tags/Terraria/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/Android/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://gegexd.com/tags/%E4%B8%AD%E6%96%87%E9%80%82%E9%85%8D/</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://gegexd.com/tags/UOM/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -244,6 +223,27 @@
   
   <url>
     <loc>https://gegexd.com/tags/%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/Terraria/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/Android/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://gegexd.com/tags/%E4%B8%AD%E6%96%87%E9%80%82%E9%85%8D/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -287,14 +287,14 @@
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://gegexd.com/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://gegexd.com/categories/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://gegexd.com/categories/%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
