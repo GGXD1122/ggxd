@@ -1,5 +1,6 @@
 ---
-title: 我用 Codex 做了 Terraria 手机版中文修正版
+title: 我用 AI 做了 Terraria 手机版中文修正版
+abstract: 本来只想给 Terraria 手机版补个中文选项，后来又顺手折腾了译文、字体和聊天字库。参考官方 Wiki 修正说明，替换原版字体、补充常用汉字，让安卓国际版 1.4.5.8.6 的中文体验更顺手。
 tags:
   - Terraria
   - Android
@@ -12,13 +13,13 @@ updated: 2026-09-20 14:00:00
 ai: true
 ---
 
+<img src="/assets/terraria-native-chinese/r12-main-menu.webp" alt="手机首次启动后的中文主菜单" width="1920" height="864" style="width:100%;height:auto">
+
+<p style="margin:1.2rem 0;text-align:center;font-size:28px;font-weight:800;line-height:1.4;letter-spacing:0">Terraria 手机版<br>中文修正版</p>
+
 本来只想给 Terraria 手机版补个中文选项，后来又顺手折腾了译文、字体和聊天字库。主要参考官方 Wiki 修正物品说明，替换原版字体、补充常用汉字，现在安卓国际版 1.4.5.8.6 的中文体验总算顺手多了。
 
-<!-- more -->
-
 这是我用 Codex 一起做的个人中文修正版，**不是 Terraria 官方发布的汉化补丁**。最初的想法很简单：游戏明明有中文，为什么还得翻配置文件？既然开始改了，就把玩的时候不顺手的地方也一起整理一下。
-
-<img src="/assets/terraria-native-chinese/r12-main-menu.webp" alt="手机首次启动后的中文主菜单" width="1920" height="864" style="width:100%;height:auto">
 
 截图左下角显示的版本文字与安装包版本不同，本文使用的安装包版本是 **1.4.5.8.6**，截图保持游戏原样。
 
