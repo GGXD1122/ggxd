@@ -13,9 +13,9 @@ updated: 2026-09-20 14:00:00
 ai: true
 ---
 
-<img src="/assets/terraria-native-chinese/r12-main-menu.webp" alt="手机首次启动后的中文主菜单" width="1920" height="864" style="width:100%;height:auto">
+<p style="margin:0 0 0.6rem;text-align:left;font-size:28px;font-weight:800;line-height:1.4;letter-spacing:0">Terraria 手机版中文修正版</p>
 
-<p style="margin:1.2rem 0;text-align:center;font-size:28px;font-weight:800;line-height:1.4;letter-spacing:0">Terraria 手机版<br>中文修正版</p>
+<img src="/assets/terraria-native-chinese/r12-main-menu.webp" alt="手机首次启动后的中文主菜单" width="1920" height="864" style="width:100%;height:auto">
 
 本来只想给 Terraria 手机版补个中文选项，后来又顺手折腾了译文、字体和聊天字库。主要参考官方 Wiki 修正物品说明，替换原版字体、补充常用汉字，现在安卓国际版 1.4.5.8.6 的中文体验总算顺手多了。
 
