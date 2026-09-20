@@ -28,7 +28,7 @@ ai: true
 
 我最初想做的，就是把这个入口补回菜单。现在设置里有独立的“简体中文”，原来的其他语言也还在。没有保存过语言设置时默认中文，已经选择过其他语言则保留原来的选择。
 
-<img src="/assets/terraria-native-chinese/r12-language-menu.webp" alt="设置中恢复独立简体中文选项，其他语言继续保留" width="1920" height="864" style="width:100%;height:auto">
+<img src="/assets/terraria-native-chinese/r12-language-focus.webp" alt="设置中恢复独立简体中文选项，其他语言继续保留" width="1152" height="864" style="width:100%;height:auto">
 
 这次实际切换了“中文 → English → 简体中文”，界面能跟着变化。结束游戏进程再打开，仍然保持中文。对玩家来说，这才是最直接的改变：在游戏里点一下就行。
 
@@ -38,11 +38,11 @@ ai: true
 
 比如魔镜，现在的说明除了返回重生点，还写明未设置重生点时返回世界出生点、可以重复使用，以及地下或洞穴宝箱这一获取方向。
 
-<img src="/assets/terraria-native-chinese/r12-item-description.webp" alt="魔镜说明展示返回位置、重复使用和宝箱获取途径" width="1920" height="864" style="width:100%;height:auto">
+<img src="/assets/terraria-native-chinese/r12-item-focus.webp" alt="魔镜说明展示返回位置、重复使用和宝箱获取途径" width="1000" height="650" style="width:100%;height:auto">
 
 我不想把整个 Wiki 塞进提示框，而是让玩家多看两行就能理解。列出的获取途径也不一定是全部来源。涉及操作时，还要照顾手机版，保留对应的触控图标，不能把电脑端的“右键”直接搬过来。
 
-<img src="/assets/terraria-native-chinese/r12-touch-controls.webp" alt="抓钩物品说明中的中文和手机版触控图标" width="1920" height="864" style="width:100%;height:auto">
+<img src="/assets/terraria-native-chinese/r12-touch-focus.webp" alt="抓钩物品说明中的中文和手机版触控图标" width="980" height="650" style="width:100%;height:auto">
 
 **r12 相比 r11，集中调整了 7 项已有物品说明**：光束剑、血泪、附魔日晷、钱币槽、水蜡烛、攀爬爪和丛林蜥蜴熔炉。这篇截图展示的是一路整理下来的累计效果，不是说这些功能和文字都在 r12 才加入。也不能据此认为全部物品翻译都已经逐条核准，后面还会继续修正。
 
@@ -52,7 +52,7 @@ ai: true
 
 聊天字库覆盖 **GB2312 的 6763 个汉字**。这是当前覆盖总量，不是在原版基础上额外新增了 6763 个字，也不保证所有生僻字、特殊符号和 Emoji 都能显示。
 
-<img src="/assets/terraria-native-chinese/r12-chinese-chat.webp" alt="单人世界聊天面板显示中文聊天测试 abc 123，验证中文英文数字混排" width="1920" height="864" style="width:100%;height:auto">
+<img src="/assets/terraria-native-chinese/r12-chat-focus.webp" alt="单人世界聊天面板显示中文聊天测试 abc 123，验证中文英文数字混排" width="870" height="650" style="width:100%;height:auto">
 
 这次在**单人世界的聊天面板**输入了“中文聊天测试 abc 123”，抽检显示正常，没有出现缺字方框或星号。它验证的是这一段文字的显示；多人消息发送和接收没有在本次测试中验证，6763 个汉字也没有逐字在真机上检查。
 
